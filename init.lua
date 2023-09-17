@@ -88,6 +88,8 @@ require('lazy').setup({
           { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+        vim.keymap.set('n', '<leader>gh', require('gitsigns').reset_hunk,
+          { buffer = bufnr, desc = 'Reset [G]it [H]unk' })
       end,
     },
   },
@@ -327,18 +329,21 @@ vim.keymap.set('n', '<leader>e', ":NvimTreeToggle<CR>")
 vim.keymap.set('n', '<leader>o', ":NvimTreeFocus<CR>")
 vim.keymap.set('n', '<leader>gr', ":GBrowse<CR>", { desc = "Open Remote" })
 
-vim.keymap.set('n', '<leader>w', ":w<CR>")
+vim.keymap.set('n', '<leader>q', ":q<CR>", { desc = "[Q]uit nvim" })
+vim.keymap.set('n', '<leader>w', ":w<CR>", { desc = "[W]rite file" })
+vim.keymap.set('n', '<leader>c', ":bd<CR>", { desc = "Close buffer" })
+vim.keymap.set('n', '<leader>br', ":bufdo e<CR>", { desc = "[R]efresh buffers" })
 
 vim.keymap.set('n', '<leader>ha', ":lua require('harpoon.mark').add_file()<CR>")
-vim.keymap.set('n', '<leader>hh', ":lua require('harpoon.mark').toggle_quick_menu()<CR>")
-vim.keymap.set('n', '<leader>hn', ":lua require('harpoon.mark').nav_next()<CR>")
-vim.keymap.set('n', '<leader>hp', ":lua require('harpoon.mark').nav_prev()<CR>")
-vim.keymap.set('n', '<leader>hj', ":lua require('harpoon.mark').nav_file(1)<CR>")
-vim.keymap.set('n', '<leader>hk', ":lua require('harpoon.mark').nav_file(2)<CR>")
-vim.keymap.set('n', '<leader>hl', ":lua require('harpoon.mark').nav_file(3)<CR>")
-vim.keymap.set('n', '<leader>hm', ":lua require('harpoon.mark').nav_file(4)<CR>")
+vim.keymap.set('n', '<leader>hh', ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
+vim.keymap.set('n', '<leader>hn', ":lua require('harpoon.ui').nav_next()<CR>")
+vim.keymap.set('n', '<leader>hp', ":lua require('harpoon.ui').nav_prev()<CR>")
+vim.keymap.set('n', '<leader>hj', ":lua require('harpoon.ui').nav_file(1)<CR>")
+vim.keymap.set('n', '<leader>hk', ":lua require('harpoon.ui').nav_file(2)<CR>")
+vim.keymap.set('n', '<leader>hl', ":lua require('harpoon.ui').nav_file(3)<CR>")
+vim.keymap.set('n', '<leader>hm', ":lua require('harpoon.ui').nav_file(4)<CR>")
 
-vim.keymap.set('n', '<leader>fl', ":Telescope resume", { opts = { desc = "[F]ind [L]ast Search" } })
+-- vim.keymap.set('n', '<leader>fl', ":Telescope resume" )
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -373,6 +378,20 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
+  on_attach = function(bufnr)
+    local api = require "nvim-tree.api"
+
+    local function opts(desc)
+      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    -- default mappings
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- custom mappings
+    vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
+    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  end,
 })
 
 require('Comment').setup({
@@ -386,6 +405,8 @@ require('Comment').setup({
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    layout_config = { height = 0.95, width = 0.95, prompt_position = 'top', },
+    layout_strategy = 'horizontal',
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -400,7 +421,7 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = '[F]ind [R]ecently opened files' })
-vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[F]ind existing [B]uffers' })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[F]ind existing [B]uffers' })
 vim.keymap.set('n', '<leader>fc', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -484,8 +505,8 @@ require('nvim-treesitter.configs').setup {
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+-- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
@@ -511,6 +532,7 @@ local on_attach = function(_, bufnr)
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('<leader>a', vim.lsp.buf.code_action, 'Lsp [A]ction')
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   --nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
