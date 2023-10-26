@@ -6,6 +6,7 @@ vim.g.maplocalleader = ' '
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+
 -- Install package manager
 --    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -84,23 +85,39 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
+        vim.keymap.set('n', '<leader>gN', require('gitsigns').prev_hunk,
           { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+        vim.keymap.set('n', '<leader>gp', require('gitsigns').preview_hunk,
+          { buffer = bufnr, desc = '[G]it [P]review Hunk' })
         vim.keymap.set('n', '<leader>gh', require('gitsigns').reset_hunk,
           { buffer = bufnr, desc = 'Reset [G]it [H]unk' })
       end,
     },
   },
 
+  -- {
+  --   'ellisonleao/gruvbox.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'gruvbox'
+  --   end,
+  -- },
+
   {
-    'ellisonleao/gruvbox.nvim',
+    "catppuccin/nvim",
+    as = "catppuccin",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
+
+  {
+    'rcarriga/nvim-dap-ui',
+    dependencies = { 'mfussenegger/nvim-dap' }
+  },
+
 
   {
     -- Set lualine as statusline
@@ -119,11 +136,9 @@ require('lazy').setup({
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
   },
+
+  { 'prettier/vim-prettier' },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -174,7 +189,7 @@ require('lazy').setup({
             jump_next = "]]",
             accept = "<CR>",
             refresh = "gr",
-            open = "<M-CR>"
+            open = "<S-CR>"
           },
           layout = {
             position = "bottom", -- | top | left | right
@@ -280,7 +295,7 @@ require('lazy').setup({
 
 -- [[ Setting options ]]
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -316,9 +331,6 @@ vim.o.completeopt = 'menuone,noselect'
 vim.wo.relativenumber = true
 
 -- [[ Basic Keymaps ]]
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
@@ -326,12 +338,15 @@ vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<S-h>', ':bprev<CR>')
 vim.keymap.set('n', '<S-l>', ':bnext<CR>')
 vim.keymap.set('n', '<leader>e', ":NvimTreeToggle<CR>")
-vim.keymap.set('n', '<leader>o', ":NvimTreeFocus<CR>")
+vim.keymap.set('n', '<leader>oo', ":NvimTreeFocus<CR>")
+vim.keymap.set('n', '<leader>of', ":NvimTreeFindFile<CR>")
 vim.keymap.set('n', '<leader>gr', ":GBrowse<CR>", { desc = "Open Remote" })
 
 vim.keymap.set('n', '<leader>q', ":q<CR>", { desc = "[Q]uit nvim" })
 vim.keymap.set('n', '<leader>w', ":w<CR>", { desc = "[W]rite file" })
 vim.keymap.set('n', '<leader>c', ":bd<CR>", { desc = "Close buffer" })
+vim.keymap.set('n', '<leader>bc', ":%bd|e#<CR>", { desc = "Close all buffers but current" })
+vim.keymap.set('n', '<leader>ba', ":%bd|e#<CR>", { desc = "Close all buffers " })
 vim.keymap.set('n', '<leader>br', ":bufdo e<CR>", { desc = "[R]efresh buffers" })
 
 vim.keymap.set('n', '<leader>ha', ":lua require('harpoon.mark').add_file()<CR>")
@@ -343,7 +358,42 @@ vim.keymap.set('n', '<leader>hk', ":lua require('harpoon.ui').nav_file(2)<CR>")
 vim.keymap.set('n', '<leader>hl', ":lua require('harpoon.ui').nav_file(3)<CR>")
 vim.keymap.set('n', '<leader>hm', ":lua require('harpoon.ui').nav_file(4)<CR>")
 
--- vim.keymap.set('n', '<leader>fl', ":Telescope resume" )
+vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end)
+vim.keymap.set('n', '<Leader>do', function() require('dap').step_over() end)
+vim.keymap.set('n', '<Leader>di', function() require('dap').step_into() end)
+vim.keymap.set('n', '<Leader>du', function() require('dap').step_out() end)
+vim.keymap.set('n', '<Leader>db', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>dB', function() require('dap').clear_breakpoints() end)
+vim.keymap.set('n', '<Leader>ds', function() require('dap').run_to_cursor() end)
+-- vim.keymap.set('n', '<Leader>du', function() require('dapui').toggle() end)
+
+-- vim.keymap.set('n', '<Leader>lp',
+-- function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
+  require('dap.ui.widgets').hover()
+end)
+vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
+  require('dap.ui.widgets').preview()
+end)
+vim.keymap.set('n', '<Leader>df', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+  local widgets = require('dap.ui.widgets')
+  widgets.centered_float(widgets.scopes)
+end)
+
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
+
+-- Split
+vim.keymap.set("n", "<leader>sh", ":split<Return><C-w>w", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>sv", ":vsplit<Return><C-w>w", { noremap = true, silent = false })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -362,6 +412,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Format on save
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePre *.tsx,*.ts,*.js,*.html,*.css  Prettier]]
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
@@ -421,6 +472,7 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = '[F]ind [R]ecently opened files' })
+vim.keymap.set('n', '<leader>fl', require('telescope.builtin').resume, { desc = '[F]ind [L]ast search' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[F]ind existing [B]uffers' })
 vim.keymap.set('n', '<leader>fc', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
@@ -434,7 +486,7 @@ vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<leader>*', require('telescope.builtin').grep_string, { desc = '[*] Find current word' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>fw', require('telescope.builtin').live_grep, { desc = '[F]ind [W]ord' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -505,7 +557,7 @@ require('nvim-treesitter.configs').setup {
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
--- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating [L]sp [D]iagnostic message' })
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- [[ Configure LSP ]]
@@ -538,7 +590,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  nmap('<C-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
