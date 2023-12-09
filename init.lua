@@ -96,14 +96,6 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   'ellisonleao/gruvbox.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'gruvbox'
-  --   end,
-  -- },
-
   {
     "catppuccin/nvim",
     as = "catppuccin",
@@ -112,12 +104,6 @@ require('lazy').setup({
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
-
-  {
-    'rcarriga/nvim-dap-ui',
-    dependencies = { 'mfussenegger/nvim-dap' }
-  },
-
 
   {
     -- Set lualine as statusline
@@ -356,35 +342,11 @@ vim.keymap.set('n', '<leader>hp', ":lua require('harpoon.ui').nav_prev()<CR>")
 vim.keymap.set('n', '<leader>hj', ":lua require('harpoon.ui').nav_file(1)<CR>")
 vim.keymap.set('n', '<leader>hk', ":lua require('harpoon.ui').nav_file(2)<CR>")
 vim.keymap.set('n', '<leader>hl', ":lua require('harpoon.ui').nav_file(3)<CR>")
-vim.keymap.set('n', '<leader>hm', ":lua require('harpoon.ui').nav_file(4)<CR>")
+vim.keymap.set('n', '<leader>hs', ":lua require('harpoon.ui').nav_file(4)<CR>")
+vim.keymap.set('n', '<leader>hd', ":lua require('harpoon.ui').nav_file(5)<CR>")
+vim.keymap.set('n', '<leader>hf', ":lua require('harpoon.ui').nav_file(6)<CR>")
 
-vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end)
-vim.keymap.set('n', '<Leader>do', function() require('dap').step_over() end)
-vim.keymap.set('n', '<Leader>di', function() require('dap').step_into() end)
-vim.keymap.set('n', '<Leader>du', function() require('dap').step_out() end)
-vim.keymap.set('n', '<Leader>db', function() require('dap').toggle_breakpoint() end)
-vim.keymap.set('n', '<Leader>dB', function() require('dap').clear_breakpoints() end)
-vim.keymap.set('n', '<Leader>ds', function() require('dap').run_to_cursor() end)
--- vim.keymap.set('n', '<Leader>du', function() require('dapui').toggle() end)
 
--- vim.keymap.set('n', '<Leader>lp',
--- function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
-vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
-  require('dap.ui.widgets').hover()
-end)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
-  require('dap.ui.widgets').preview()
-end)
-vim.keymap.set('n', '<Leader>df', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.frames)
-end)
-vim.keymap.set('n', '<Leader>ds', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.scopes)
-end)
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
@@ -392,7 +354,7 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
 
 -- Split
-vim.keymap.set("n", "<leader>sh", ":split<Return><C-w>w", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>ss", ":split<Return><C-w>w", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>sv", ":vsplit<Return><C-w>w", { noremap = true, silent = false })
 
 -- Remap for dealing with word wrap
@@ -447,6 +409,7 @@ require("nvim-tree").setup({
 
 require('Comment').setup({
   ignore = '^$',
+  padding = true,
   toggler = {
     line = '<leader>/',
   },
