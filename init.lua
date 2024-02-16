@@ -5,6 +5,7 @@ vim.g.maplocalleader = ' '
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.nvim_tree_disable_netrw = 0
 
 
 -- Install package manager
@@ -334,7 +335,7 @@ vim.keymap.set('n', '<S-l>', ':bnext<CR>')
 vim.keymap.set('n', '<leader>e', ":NvimTreeToggle<CR>")
 vim.keymap.set('n', '<leader>oo', ":NvimTreeFocus<CR>")
 vim.keymap.set('n', '<leader>of', ":NvimTreeFindFile<CR>")
-vim.keymap.set('n', '<leader>gr', ":GBrowse<CR>", { desc = "Open Remote" })
+vim.keymap.set('n', '<leader>go', ":GBrowse<CR>", { desc = "Open Remote" })
 
 vim.keymap.set('n', '<leader>q', ":q<CR>", { desc = "[Q]uit nvim" })
 vim.keymap.set('n', '<leader>w', ":w<CR>", { desc = "[W]rite file" })
@@ -342,6 +343,8 @@ vim.keymap.set('n', '<leader>x', ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set('n', '<leader>bc', ":%bd|e#<CR>", { desc = "Close all buffers but current" })
 vim.keymap.set('n', '<leader>ba', ":%bd|e#<CR>", { desc = "Close all buffers " })
 vim.keymap.set('n', '<leader>br', ":bufdo e<CR>", { desc = "[R]efresh buffers" })
+
+vim.keymap.set('n', '<leader>u', ":UndotreeToggle<CR>", { desc = "[U]ndotree toggle" })
 
 vim.keymap.set('n', '<leader>ha', ":lua require('harpoon.mark').add_file()<CR>")
 vim.keymap.set('n', '<leader>hh', ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
