@@ -168,6 +168,10 @@ require('lazy').setup({
   },
 
   {
+    'nvim-pack/nvim-spectre'
+  },
+
+  {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
@@ -487,6 +491,20 @@ vim.keymap.set('n', '<leader>fW',
 vim.keymap.set('n', '<leader>fq',
   ":lua require('telescope.builtin').live_grep { glob_pattern = {'**/*.queries.*', '**/schema/**' } }<CR>",
   { desc = '[F]ind Word in Frontend [Q]ueries' })
+
+-- nvim spectre kep maps
+vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
+  desc = "Toggle Spectre"
+})
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+  desc = "Search current word"
+})
+vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+  desc = "Search current word"
+})
+vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+  desc = "Search on current file"
+})
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
