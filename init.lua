@@ -23,6 +23,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Define a custom Browse function so we dont need to load netrw
+vim.api.nvim_create_user_command(
+  'Browse',
+  function(opts)
+    vim.fn.system { 'open', opts.fargs[1] }
+  end,
+  { nargs = 1 }
+)
 
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
@@ -338,8 +346,11 @@ vim.keymap.set('n', '<leader>of', ":NvimTreeFindFile<CR>")
 vim.keymap.set('n', '<leader>go', ":GBrowse<CR>", { desc = "Open Remote" })
 
 vim.keymap.set('n', '<leader>q', ":q<CR>", { desc = "[Q]uit nvim" })
+vim.keymap.set('n', '<leader>Q', ":q!<CR>", { desc = "Force [Q]uit nvim" })
 vim.keymap.set('n', '<leader>w', ":w<CR>", { desc = "[W]rite file" })
+vim.keymap.set('n', '<leader>W', ":wa<CR>", { desc = "[W]rite [A]ll files" })
 vim.keymap.set('n', '<leader>x', ":bd<CR>", { desc = "Close buffer" })
+vim.keymap.set('n', '<leader>X', ":bd!<CR>", { desc = "Force Close buffer" })
 vim.keymap.set('n', '<leader>bc', ":%bd|e#<CR>", { desc = "Close all buffers but current" })
 vim.keymap.set('n', '<leader>ba', ":%bd|e#<CR>", { desc = "Close all buffers " })
 vim.keymap.set('n', '<leader>br', ":bufdo e<CR>", { desc = "[R]efresh buffers" })
@@ -355,33 +366,7 @@ vim.keymap.set('n', '<leader>hk', ":lua require('harpoon.ui').nav_file(2)<CR>")
 vim.keymap.set('n', '<leader>hl', ":lua require('harpoon.ui').nav_file(3)<CR>")
 vim.keymap.set('n', '<leader>hm', ":lua require('harpoon.ui').nav_file(4)<CR>")
 
-vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end)
-vim.keymap.set('n', '<Leader>do', function() require('dap').step_over() end)
-vim.keymap.set('n', '<Leader>di', function() require('dap').step_into() end)
-vim.keymap.set('n', '<Leader>du', function() require('dap').step_out() end)
-vim.keymap.set('n', '<Leader>db', function() require('dap').toggle_breakpoint() end)
-vim.keymap.set('n', '<Leader>dB', function() require('dap').clear_breakpoints() end)
-vim.keymap.set('n', '<Leader>ds', function() require('dap').run_to_cursor() end)
--- vim.keymap.set('n', '<Leader>du', function() require('dapui').toggle() end)
-
--- vim.keymap.set('n', '<Leader>lp',
--- function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
-vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
-  require('dap.ui.widgets').hover()
-end)
-vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
-  require('dap.ui.widgets').preview()
-end)
-vim.keymap.set('n', '<Leader>df', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.frames)
-end)
-vim.keymap.set('n', '<Leader>ds', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.scopes)
-end)
+vim.keymap.set('n', '<leader>y', "gg^vGy")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
@@ -444,9 +429,6 @@ require("nvim-tree").setup({
 
 require('Comment').setup({
   ignore = '^$',
-  toggler = {
-    line = '<leader>/',
-  },
 })
 
 -- [[ Configure Telescope ]]
@@ -455,6 +437,11 @@ require('telescope').setup {
   defaults = {
     layout_config = { height = 0.95, width = 0.95, prompt_position = 'top', },
     layout_strategy = 'horizontal',
+    -- wrap_results = true,
+    path_display = function(opts, path)
+      local tail = require("telescope.utils").path_tail(path)
+      return string.format("[%s]  >>  [%s]", tail, path)
+    end,
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -480,10 +467,26 @@ vim.keymap.set('n', '<leader>fc', function()
 end, { desc = '[F]uzzily search in [C]urrent buffer' })
 
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = '[F]ind [G]it Files' })
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
+vim.keymap.set('n', '<leader>ff',
+  ":lua require('telescope.builtin').find_files { find_command = { 'rg', '--files', '-g', '!**/*.test.*', '-g', '!**/*.spec.*' } }<CR>",
+  { desc = '[F]ind [F]iles' })
+vim.keymap.set('n', '<leader>ft',
+  ":lua require('telescope.builtin').find_files { find_command = { 'rg', '--files', '-g', '**/*.test.*', '-g', '**/*.spec.*' } }<CR>",
+  { desc = '[F]ind [T]ests' })
+vim.keymap.set('n', '<leader>fa',
+  ":lua require('telescope.builtin').find_files { find_command = { 'rg', '--files', '-uu','-g', '!**/node_modules/**' } }<CR>",
+  { desc = '[F]ind [A]ll Files', })
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<leader>*', require('telescope.builtin').grep_string, { desc = '[*] Find current word' })
-vim.keymap.set('n', '<leader>fw', require('telescope.builtin').live_grep, { desc = '[F]ind [W]ord' })
+vim.keymap.set('n', '<leader>fw',
+  ":lua require('telescope.builtin').live_grep { glob_pattern = {'!**/*.spec.*', '!**/*.test.*'} }<CR>",
+  { desc = '[F]ind [W]ord in Files' })
+vim.keymap.set('n', '<leader>fW',
+  ":lua require('telescope.builtin').live_grep { glob_pattern = {'**/*.spec.*', '**/*.test.*'} }<CR>",
+  { desc = '[F]ind [W]ord in Tests' })
+vim.keymap.set('n', '<leader>fq',
+  ":lua require('telescope.builtin').live_grep { glob_pattern = {'**/*.queries.*', '**/schema/**' } }<CR>",
+  { desc = '[F]ind Word in Frontend [Q]ueries' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -575,7 +578,6 @@ local on_attach = function(_, bufnr)
   end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>a', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -701,4 +703,4 @@ cmp.setup {
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-
