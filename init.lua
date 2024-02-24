@@ -435,8 +435,8 @@ require('Comment').setup({
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
-    layout_config = { height = 0.95, width = 0.95, prompt_position = 'top', },
-    layout_strategy = 'horizontal',
+    layout_config = { height = 0.95, width = 0.95, },
+    layout_strategy = 'vertical',
     -- wrap_results = true,
     path_display = function(opts, path)
       local tail = require("telescope.utils").path_tail(path)
