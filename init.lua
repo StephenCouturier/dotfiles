@@ -37,6 +37,10 @@ vim.api.nvim_create_user_command(
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
+  "tpope/vim-dadbod",
+  "kristijanhusak/vim-dadbod-completion",
+  "kristijanhusak/vim-dadbod-ui",
+
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
@@ -97,7 +101,7 @@ require('lazy').setup({
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',  opts = {} },
-  
+
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -122,20 +126,13 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   'ellisonleao/gruvbox.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'gruvbox'
-  --   end,
-  -- },
-
   {
     "catppuccin/nvim",
     as = "catppuccin",
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'catppuccin'
+      -- vim.api.nvim_set_hl(0, "Normal", { guibg = NONE, ctermbg = NONE })
     end,
   },
 
@@ -199,76 +196,89 @@ require('lazy').setup({
 
   { 'ThePrimeagen/harpoon' },
 
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        panel = {
-          enabled = true,
-          auto_refresh = false,
-          keymap = {
-            jump_prev = "[[",
-            jump_next = "]]",
-            accept = "<CR>",
-            refresh = "gr",
-            open = "<S-CR>"
-          },
-          layout = {
-            position = "bottom", -- | top | left | right
-            ratio = 0.4
-          },
-        },
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          debounce = 75,
-          keymap = {
-            accept = "<C-t>",
-            accept_word = false,
-            accept_line = false,
-            next = "<C-n>",
-            prev = "<C-p>",
-            dismiss = "<C-e>",
-          },
-        },
-        filetypes = {
-          yaml = false,
-          markdown = false,
-          help = false,
-          gitcommit = false,
-          gitrebase = false,
-          hgcommit = false,
-          svn = false,
-          cvs = false,
-          ["."] = false,
-        },
-        copilot_node_command = 'node', -- Node.js version must be > 16.x
-        server_opts_overrides = {},
-      })
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({
+  --       panel = {
+  --         enabled = true,
+  --         auto_refresh = false,
+  --         keymap = {
+  --           jump_prev = "[[",
+  --           jump_next = "]]",
+  --           accept = "<CR>",
+  --           refresh = "gr",
+  --           open = "<S-CR>"
+  --         },
+  --         layout = {
+  --           position = "bottom", -- | top | left | right
+  --           ratio = 0.4
+  --         },
+  --       },
+  --       suggestion = {
+  --         enabled = true,
+  --         auto_trigger = true,
+  --         debounce = 75,
+  --         keymap = {
+  --           accept = "<C-t>",
+  --           accept_word = false,
+  --           accept_line = false,
+  --           next = "<C-n>",
+  --           prev = "<C-p>",
+  --           dismiss = "<C-e>",
+  --         },
+  --       },
+  --       filetypes = {
+  --         yaml = false,
+  --         markdown = false,
+  --         help = false,
+  --         gitcommit = false,
+  --         gitrebase = false,
+  --         hgcommit = false,
+  --         svn = false,
+  --         cvs = false,
+  --         ["."] = false,
+  --       },
+  --       copilot_node_command = 'node', -- Node.js version must be > 16.x
+  --       server_opts_overrides = {},
+  --     })
+  --   end,
+  -- },
   { "mbbill/undotree",     lazy = false },
 
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   opts = {
+  --     on_attach = function(bufnr)
+  --       local api = require "nvim-tree.api"
+
+  --       local function opts(desc)
+  --         return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  --       end
+
+  --       -- default mappings
+  --       api.config.mappings.default_on_attach(bufnr)
+
+  --       -- custom mappings
+  --       vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
+  --       vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  --     end
+  --   }
+  -- },
+
   {
-    "nvim-tree/nvim-tree.lua",
-    opts = {
-      on_attach = function(bufnr)
-        local api = require "nvim-tree.api"
-
-        local function opts(desc)
-          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-        end
-
-        -- default mappings
-        api.config.mappings.default_on_attach(bufnr)
-
-        -- custom mappings
-        vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
-        vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-      end
-    }
+    "kelly-lin/ranger.nvim",
+    config = function()
+      require("ranger-nvim").setup({ replace_netrw = true })
+      vim.api.nvim_set_keymap("n", "<leader>e", "", {
+        noremap = true,
+        callback = function()
+          require("ranger-nvim").open(true)
+        end,
+      })
+    end,
   },
 
   {
@@ -361,9 +371,9 @@ vim.keymap.set({ 'n', 'v' }, '<C-u>', '<C-u>zz')
 vim.keymap.set({ 'n', 'v' }, '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<S-h>', ':bprev<CR>')
 vim.keymap.set('n', '<S-l>', ':bnext<CR>')
-vim.keymap.set('n', '<leader>e', ":NvimTreeToggle<CR>")
-vim.keymap.set('n', '<leader>oo', ":NvimTreeFocus<CR>")
-vim.keymap.set('n', '<leader>of', ":NvimTreeFindFile<CR>")
+-- vim.keymap.set('n', '<leader>e', ":NvimTreeToggle<CR>")
+-- vim.keymap.set('n', '<leader>oo', ":NvimTreeFocus<CR>")
+-- vim.keymap.set('n', '<leader>of', ":NvimTreeFindFile<CR>")
 vim.keymap.set('n', '<leader>go', ":GBrowse<CR>", { desc = "Open Remote" })
 
 vim.keymap.set('n', '<leader>q', ":q<CR>", { desc = "[Q]uit nvim" })
@@ -395,8 +405,8 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
 
 -- Split
-vim.keymap.set("n", "<leader>sh", ":split<Return><C-w>w", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>sv", ":vsplit<Return><C-w>w", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>oh", ":split<Return><C-w>w", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>ov", ":vsplit<Return><C-w>w", { noremap = true, silent = false })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -421,32 +431,32 @@ vim.cmd [[autocmd BufWritePre *.tsx,*.ts,*.js,*.html,*.css  Prettier]]
 vim.opt.termguicolors = true
 
 -- OR setup with some options
-require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-  on_attach = function(bufnr)
-    local api = require "nvim-tree.api"
+-- require("nvim-tree").setup({
+--   sort_by = "case_sensitive",
+--   view = {
+--     width = 30,
+--   },
+--   renderer = {
+--     group_empty = true,
+--   },
+--   filters = {
+--     dotfiles = true,
+--   },
+--   on_attach = function(bufnr)
+--     local api = require "nvim-tree.api"
 
-    local function opts(desc)
-      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-    end
+--     local function opts(desc)
+--       return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+--     end
 
-    -- default mappings
-    api.config.mappings.default_on_attach(bufnr)
+--     -- default mappings
+--     api.config.mappings.default_on_attach(bufnr)
 
-    -- custom mappings
-    vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
-    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-  end,
-})
+--     -- custom mappings
+--     vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
+--     vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+--   end,
+-- })
 
 require('Comment').setup({
   ignore = '^$',
@@ -736,6 +746,13 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+cmp.setup.filetype({ "sql" }, {
+  sources = {
+    { name = "vim-dadbod-completion" },
+    { name = "buffer" },
+  },
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
