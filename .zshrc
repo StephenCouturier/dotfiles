@@ -138,7 +138,7 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 alias yup="yarn install && yarn migrate:dev && yarn migrate:test && yarn gen-types"
-alias gp="git pull origin main && yarn migrate:dev && yarn migrate:test && yarn gen-types"
+alias gp="git pull origin main"
 alias git-date='git for-each-ref --sort=-committerdate refs/heads/ | head -n 50'
 alias "gl"="git checkout @{-1}"
 alias "gl2"="git checkout @{-2}"
@@ -149,14 +149,16 @@ alias git-date='git for-each-ref --sort=-committerdate refs/heads/ | head -n 50'
 alias git-rm-branches='git branch | egrep -v "(^\*|master|main)" | xargs git branch -d'
 alias yt="yarn test"
 alias ys="yarn start"
+alias yb="yarn build"
 alias yst="yarn start:test"
+alias yco="yarn cy:open"
 alias vt="yarn vitest $1"
 alias ga="git add -i"
 alias op="cd Projects/risk-management"
 alias sws="cd Projects/risk-management/web-client && yarn start"
 alias sc="cd Projects/risk-management && yarn cy:open"
 alias ymg="yarn sequelize migration:generate --name $1"
-alias prod="heroku run yarn workspace api console --app obie-private-rm-production --size=Private-M"
+alias b="yarn build"
 alias greset="git fetch origin && git reset --hard origin/main"
 alias prdb=”/opt/local/bin/prdb.sh”
 
@@ -166,7 +168,18 @@ alias ytdb="yarn test:debugb"
 alias vtd="f() {TEST_FILE=$1 yarn test:debug};f"
 alias vtdb="f() {TEST_FILE=$1 yarn test:debugb};f"
 
-alias conp="heroku run yarn workspace api console --app obie-private-rm-production --size=Private-M"
+alias conp="heroku run yarn workspace api console --app obie-private-rm-production --size=Private-M  2>&1 | tee ~/logs/console/$(date +"%Y%m%d%H%M").log"
+
+alias conrc="heroku run yarn workspace api run-crons --app obie-rm-review-pr-13081 --size=Performance-M  2>&1 | tee ~/logs/console/$(date +"%Y%m%d%H%M").log"
+# obie-rm-review-pr-13081
+
+alias vc="nvim ~/.config/nvim/lua/user/init.lua"
+alias zc="nvim ~/.zshrc"
+alias zs="source ~/.zshrc"
+alias g="lazygit"
+alias v="nvim"
+
+export EDITOR=nvim
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
