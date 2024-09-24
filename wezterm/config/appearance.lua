@@ -8,9 +8,9 @@ return {
    front_end = 'WebGpu',
    webgpu_power_preference = 'HighPerformance',
    webgpu_preferred_adapter = gpu_adapters:pick_best(),
-   window_decorations = 'NONE',
+   window_decorations = 'RESIZE',
 
-   -- color scheme
+   -- -- color scheme
    colors = colors,
 
    -- background
