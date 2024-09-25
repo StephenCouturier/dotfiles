@@ -11,7 +11,6 @@ elseif platform.is_win or platform.is_linux then
    mod.SUPER = 'CTRL' -- to not conflict with Windows key shortcuts
 end
 
- 
 -- stylua: ignore
 local keys = {
    -- misc/useful --
@@ -26,7 +25,12 @@ local keys = {
    -- },
    -- { key = 'F11', mods = 'NONE',    action = act.ToggleFullScreen },
    -- { key = 'F12', mods = 'NONE',    action = act.ShowDebugOverlay },
-   { key = 'f',   mods = mod.SUPER, action = act.Search({ CaseInSensitiveString = '' }) },
+   { key = 'f',   mods = 'LEADER', action = act.Search({ CaseInSensitiveString = '' }) },
+   { key = 'k',   mods = 'LEADER', action = act.Multiple {
+      act.ClearScrollback 'ScrollbackAndViewport',
+      act.SendKey { key = 'L', mods = 'CTRL' },
+     }
+   },
    {
       key = 'u',
       mods = mod.SUPER,
@@ -59,14 +63,15 @@ local keys = {
    -- tabs --
    -- tabs: spawn+close
    { key = 'c',          mods = 'LEADER',     action = act.SpawnTab('DefaultDomain') },
+   { key = 'n',          mods = 'LEADER',     action = act.SpawnTab('DefaultDomain') },
    -- { key = 't',          mods = mod.SUPER_REV, action = act.SpawnTab({ DomainName = 'WSL:Ubuntu' }) },
    -- { key = 'w',          mods = mod.SUPER_REV, action = act.CloseCurrentTab({ confirm = false }) },
 
    -- tabs: navigation
    -- { key = '[',          mods = mod.SUPER,     action = act.ActivateTabRelative(-1) },
    -- { key = ']',          mods = mod.SUPER,     action = act.ActivateTabRelative(1) },
-   { key = 'p',          mods = 'LEADER', action = act.MoveTabRelative(-1) },
-   { key = 'n',          mods = 'LEADER', action = act.MoveTabRelative(1) },
+   -- { key = 'p',          mods = 'LEADER', action = act.MoveTabRelative(-1) },
+   -- { key = 'n',          mods = 'LEADER', action = act.MoveTabRelative(1) },
 
    -- window --
    -- spawn windows
