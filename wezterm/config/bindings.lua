@@ -25,8 +25,8 @@ local keys = {
    -- },
    -- { key = 'F11', mods = 'NONE',    action = act.ToggleFullScreen },
    -- { key = 'F12', mods = 'NONE',    action = act.ShowDebugOverlay },
-   { key = 'f',   mods = 'LEADER', action = act.Search({ CaseInSensitiveString = '' }) },
-   { key = 'k',   mods = 'LEADER', action = act.Multiple {
+   { key = 'f',   mods = "CTRL", action = act.Search({ CaseInSensitiveString = '' }) },
+   { key = 'k',   mods = 'CTRL', action = act.Multiple {
       act.ClearScrollback 'ScrollbackAndViewport',
       act.SendKey { key = 'L', mods = 'CTRL' },
      }
