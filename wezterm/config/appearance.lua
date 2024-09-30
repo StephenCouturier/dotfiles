@@ -45,7 +45,6 @@ return {
       top = 12,
       bottom = 7,
    },
-   window_close_confirmation = 'NeverPrompt',
    window_frame = {
       active_titlebar_bg = '#090909',
       -- font = fonts.font,

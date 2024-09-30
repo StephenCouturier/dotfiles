@@ -4,6 +4,7 @@ return {
    exit_behavior = 'CloseOnCleanExit', -- if the shell program exited with a successful status
    exit_behavior_messaging = 'Verbose',
    status_update_interval = 1000,
+   window_close_confirmation = 'AlwaysPrompt',
 
    scrollback_lines = 5000,
 
