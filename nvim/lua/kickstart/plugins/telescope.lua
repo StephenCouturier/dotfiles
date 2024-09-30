@@ -61,6 +61,13 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
+        defaults = {
+          layout_config = {
+            vertical = { height = 0.95, width = 0.95 },
+            -- other layout configuration here
+          },
+          layout_strategy = 'vertical',
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
@@ -87,29 +94,45 @@ return {
       end, { desc = '[F]uzzily search in [C]urrent buffer' })
 
       vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = '[F]ind [G]it Files' })
-      vim.keymap.set('n', '<leader>ff',
+      vim.keymap.set(
+        'n',
+        '<leader>ff',
         ":lua require('telescope.builtin').find_files { find_command = { 'rg', '--files', '-g', '!**/*.test.*', '-g', '!**/*.spec.*' } }<CR>",
-        { desc = '[F]ind [F]iles' })
-      vim.keymap.set('n', '<leader>ft',
+        { desc = '[F]ind [F]iles' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>ft',
         ":lua require('telescope.builtin').find_files { find_command = { 'rg', '--files', '-g', '**/*.test.*', '-g', '**/*.spec.*' } }<CR>",
-        { desc = '[F]ind [T]ests' })
-      vim.keymap.set('n', '<leader>faf',
+        { desc = '[F]ind [T]ests' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>faf',
         ":lua require('telescope.builtin').find_files { find_command = { 'rg', '--files', '-uu','-g', '!**/node_modules/**' } }<CR>",
-        { desc = '[F]ind [A]ll [F]iles', })
-      vim.keymap.set('n', '<leader>faw',
-        ":lua require('telescope.builtin').live_grep { }<CR>",
-        { desc = '[F]ind [A]ll [W]ords', })
+        { desc = '[F]ind [A]ll [F]iles' }
+      )
+      vim.keymap.set('n', '<leader>faw', ":lua require('telescope.builtin').live_grep { }<CR>", { desc = '[F]ind [A]ll [W]ords' })
       vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
       vim.keymap.set('n', '<leader>*', require('telescope.builtin').grep_string, { desc = '[*] Find current word' })
-      vim.keymap.set('n', '<leader>fw',
+      vim.keymap.set(
+        'n',
+        '<leader>fw',
         ":lua require('telescope.builtin').live_grep { glob_pattern = {'!**/*.spec.*', '!**/*.test.*'} }<CR>",
-        { desc = '[F]ind [W]ord in Files' })
-      vim.keymap.set('n', '<leader>fW',
+        { desc = '[F]ind [W]ord in Files' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>fW',
         ":lua require('telescope.builtin').live_grep { glob_pattern = {'**/*.spec.*', '**/*.test.*'} }<CR>",
-        { desc = '[F]ind [W]ord in Tests' })
-      vim.keymap.set('n', '<leader>fq',
+        { desc = '[F]ind [W]ord in Tests' }
+      )
+      vim.keymap.set(
+        'n',
+        '<leader>fq',
         ":lua require('telescope.builtin').live_grep { glob_pattern = {'**/*.queries.*', '**/schema/**' } }<CR>",
-        { desc = '[F]ind Word in Frontend [Q]ueries' })
+        { desc = '[F]ind Word in Frontend [Q]ueries' }
+      )
     end,
   },
 }
