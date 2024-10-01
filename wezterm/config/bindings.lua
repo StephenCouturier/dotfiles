@@ -203,7 +203,7 @@ local mouse_bindings = {
 
 return {
    disable_default_key_bindings = true,
-   leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 3000 },
+   leader = { key = 's', mods = 'CTRL', timeout_milliseconds = 3000 },
    keys = keys,
    key_tables = key_tables,
    mouse_bindings = mouse_bindings,
