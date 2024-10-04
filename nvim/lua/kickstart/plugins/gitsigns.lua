@@ -24,17 +24,17 @@ return {
         end
 
         -- Navigation
-        map('n', 'n', function()
+        map('n', '<leader>gn', function()
           if vim.wo.diff then
-            vim.cmd.normal { 'n', bang = true }
+            vim.cmd.normal { '<leader>gn', bang = true }
           else
             gitsigns.nav_hunk 'next'
           end
         end, { desc = 'Jump to [n]ext git change' })
 
-        map('n', 'N', function()
+        map('n', '<leader>gN', function()
           if vim.wo.diff then
-            vim.cmd.normal { 'N', bang = true }
+            vim.cmd.normal { '<leader>gN', bang = true }
           else
             gitsigns.nav_hunk 'prev'
           end
