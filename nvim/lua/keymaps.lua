@@ -46,6 +46,23 @@ vim.keymap.set('n', '<leader>y', 'gg^vG$y')
 vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating [L]sp [D]iagnostic message' })
 vim.keymap.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Copilot
+-- Disable the default Tab mapping for Copilot
+vim.g.copilot_no_tab_map = true
+
+-- Accept Copilot suggestion
+vim.api.nvim_set_keymap('i', '<M-a>', 'copilot#Accept()', { silent = true, expr = true, script = true })
+-- Dismiss Copilot suggestion
+vim.api.nvim_set_keymap('i', '<M-d>', 'copilot#Dismiss()', { silent = true, expr = true, script = true })
+-- Navigate to the next Copilot suggestion
+vim.api.nvim_set_keymap('i', '<M-n>', 'copilot#Next()', { silent = true, expr = true, script = true })
+-- Navigate to the previous Copilot suggestion
+vim.api.nvim_set_keymap('i', '<M-p>', 'copilot#Previous()', { silent = true, expr = true, script = true })
+-- Request an explicit Copilot suggestion
+vim.api.nvim_set_keymap('i', '<M-\\>', 'copilot#Complete()', { silent = true, expr = true, script = true })
+-- Open the Copilot panel
+vim.api.nvim_set_keymap('i', '<M-P>', ':Copilot panel<CR>', { silent = true, script = true })
+
 -- [[ Basic Autocommands ]] See `:help lua-guide-autocommands`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
