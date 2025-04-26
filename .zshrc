@@ -16,7 +16,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="simple"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -137,14 +137,14 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-alias yup="yarn install && yarn migrate:dev && yarn migrate:test && yarn gen-types"
+alias yup="yarn install && yarn migrate:dev && yarn migrate:test && yarn gen-types && ~/Projects/risk-management/setup-scripts/sync-environments.sh"
 alias gp="git pull origin main"
 alias git-date='git for-each-ref --sort=-committerdate refs/heads/ | head -n 50'
 alias "gl"="git checkout @{-1}"
 alias "gl2"="git checkout @{-2}"
 alias "gl3"="git checkout @{-3}"
 alias yundo="yarn migrate:dev:undo && yarn migrate:test:undo"
-alias obie-backup='/opt/homebrew/bin/pg_restore --verbose --clean --no-acl --no-owner -h localhost -U stephencouturier -d obie_dev /Users/stephencouturier/Downloads/latest.dump'
+alias obie-backup='/opt/homebrew/opt/postgresql@17/bin/pg_restore --verbose --clean --no-acl --no-owner -h localhost -U stephencouturier -d obie_dev /Users/stephencouturier/Downloads/latest.dump'
 alias git-date='git for-each-ref --sort=-committerdate refs/heads/ | head -n 50'
 alias git-rm-branches='git branch | egrep -v "(^\*|master|main)" | xargs git branch -d'
 alias yt="yarn test"
@@ -170,14 +170,13 @@ alias vtdb="f() {TEST_FILE=$1 yarn test:debugb};f"
 
 alias conp="heroku run yarn workspace api console --app obie-private-rm-production --size=Private-M  2>&1 | tee ~/logs/console/$(date +"%Y%m%d%H%M").log"
 
-alias conrc="heroku run yarn workspace api run-crons --app obie-rm-review-pr-13081 --size=Performance-M  2>&1 | tee ~/logs/console/$(date +"%Y%m%d%H%M").log"
-# obie-rm-review-pr-13081
+alias conr="heroku run yarn workspace api console --app obie-rm-review-pr-13994 --size=Performance-M  2>&1 | tee ~/logs/console/$(date +"%Y%m%d%H%M").log"
 
 alias vc="nvim ~/.config/nvim/lua/user/init.lua"
 alias zc="nvim ~/.zshrc"
 alias zs="source ~/.zshrc"
 alias g="lazygit"
-alias v="nvim"
+alias v="~/nvim/bin/nvim"
 
 export EDITOR=nvim
 
@@ -186,3 +185,4 @@ export EDITOR=nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"#
