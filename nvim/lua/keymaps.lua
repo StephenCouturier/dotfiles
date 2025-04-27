@@ -39,7 +39,6 @@ vim.keymap.set('n', '<leader>hj', ":lua require('harpoon.ui').nav_file(1)<CR>")
 vim.keymap.set('n', '<leader>hk', ":lua require('harpoon.ui').nav_file(2)<CR>")
 vim.keymap.set('n', '<leader>hl', ":lua require('harpoon.ui').nav_file(3)<CR>")
 vim.keymap.set('n', '<leader>hm', ":lua require('harpoon.ui').nav_file(4)<CR>")
-vim.keymap.set('n', '<leader>e', '<CMD>Oil --float<CR>', { desc = 'Open parent directory' })
 
 vim.keymap.set('n', '<leader>y', 'gg^vG$y')
 
