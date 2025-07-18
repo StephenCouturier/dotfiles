@@ -66,4 +66,9 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+vim.opt.foldmethod = 'indent'
+vim.opt.foldenable = true -- Enable folding
+vim.opt.foldlevel = 99 -- Open all folds by default
+vim.opt.foldlevelstart = 99 -- Start with folds open
+
 -- vim: ts=2 sts=2 sw=2 et
