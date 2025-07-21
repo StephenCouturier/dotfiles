@@ -71,4 +71,7 @@ vim.opt.foldenable = true -- Enable folding
 vim.opt.foldlevel = 99 -- Open all folds by default
 vim.opt.foldlevelstart = 99 -- Start with folds open
 
+vim.o.background = 'dark' -- or "light" for light mode
+vim.cmd [[colorscheme gruvbox]]
+
 -- vim: ts=2 sts=2 sw=2 et
