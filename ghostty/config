@@ -1,0 +1,8 @@
+theme = GruvboxDark
+
+keybind = ctrl+shift+r=reload_config
+
+keybind = ctrl+shift+h=new_split:down
+keybind = ctrl+shift+v=new_split:right
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+x=close_surface
