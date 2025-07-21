@@ -13,4 +13,5 @@ return {
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'github/copilot.vim',
+  'ellisonleao/gruvbox.nvim',
 }
