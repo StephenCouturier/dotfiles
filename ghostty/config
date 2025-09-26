@@ -1,8 +1,31 @@
-theme = GruvboxDark
+theme = Gruvbox Dark Hard
+
+# added PR: Implement loading custom css in the GTK app https://github.com/ghostty-org/ghostty/pull/4200
+gtk-custom-css = tab-style.css
+
+# https://ghostty.org/docs/config/reference#font-feature
+# font-feature = -liga
+# font-feature = -ss20
+# font-feature = -calt
+
+# disable dlig so that we see `--` instead of something like `—`
+font-feature = -dlig
+
+# https://ghostty.org/docs/config/reference#window-save-state
+# This is currently only supported on macOS. This has no effect on Linux.
+window-save-state = always
+
+gtk-wide-tabs = false
+window-decoration = none
+
+
+
+# only works when gtk-adwaita enabled
+window-theme = ghostty
 
 keybind = ctrl+shift+r=reload_config
 
-keybind = ctrl+shift+h=new_split:down
-keybind = ctrl+shift+v=new_split:right
+keybind = ctrl+shift+-=new_split:down
+keybind = ctrl+shift+\=new_split:right
 keybind = ctrl+shift+t=new_tab
 keybind = ctrl+shift+x=close_surface
