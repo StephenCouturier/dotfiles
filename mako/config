@@ -1,0 +1,9 @@
+
+[global]
+font=Monospace 10
+padding=10
+margin=10
+background=#222222cc
+foreground=#ffffff
+border-size=2
+border-color=#ffffff

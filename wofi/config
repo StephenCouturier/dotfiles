@@ -1,0 +1,27 @@
+# Number of columns in the grid
+num-columns=1
+
+# Width of the menu (px)
+width=400
+
+# Height of each menu entry (px)
+entry-height=40
+
+# Font to use
+font=Monospace 12
+
+# Color scheme
+background=#222222cc
+foreground=#ffffff
+highlight=#4c7899
+border-color=#ffffff
+border-size=2
+
+# Show icons (if available)
+show-icons=true
+
+# Confirm launch with Enter key (default)
+confirm-launch=true
+
+# Case-insensitive filtering
+case-insensitive=true
