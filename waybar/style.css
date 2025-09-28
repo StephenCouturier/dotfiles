@@ -2,7 +2,7 @@
 
 * {
     font-size:15px;
-    font-family: "CodeNewRoman Nerd Font Propo";
+    font-family: "JetBrainsMono Nerd Font";
 }
 window#waybar{
     all:unset;
@@ -32,25 +32,14 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+#clock:hover, #custom-pacman:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
     transition: all .3s ease;
     color:@color9;
-}
-#custom-notification {
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
 }
 #clock{
     padding: 0px 5px;
     color:@color7;
     transition: all .3s ease;
-}
-#custom-pacman{
-    padding: 0px 5px;
-    transition: all .3s ease;
-    color:@color7;
-
 }
 #workspaces {
     padding: 0px 5px;
@@ -98,7 +87,6 @@ tooltip {
     padding: 0px 5px;
     transition: all .3s ease;
     color:@color7;
-
 }
 #battery{
     padding: 0px 5px;
@@ -139,6 +127,10 @@ tooltip {
 }
 #custom-colorpicker{
     padding: 0px 5px;
+}
+#custom-copyq{
+    padding: 0px 5px;
+    color:@color7;
 }
 #cpu,#memory,#temperature{
     padding: 0px 5px;

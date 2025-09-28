@@ -1,9 +1,8 @@
-
-[global]
 font=Monospace 10
 padding=10
 margin=10
-background=#222222cc
-foreground=#ffffff
+background-color=#222222cc
+text-color=#ffffff
 border-size=2
 border-color=#ffffff
+border-radius=10
