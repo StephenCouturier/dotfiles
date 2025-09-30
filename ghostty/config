@@ -10,6 +10,7 @@ gtk-custom-css = tab-style.css
 
 # disable dlig so that we see `--` instead of something like `—`
 font-feature = -dlig
+font-size = 12
 
 # https://ghostty.org/docs/config/reference#window-save-state
 # This is currently only supported on macOS. This has no effect on Linux.
@@ -20,9 +21,13 @@ window-decoration = none
 
 background-opacity = 0.9
 
+mouse-hide-while-typing = true
+window-padding-x = 20 
 
 # only works when gtk-adwaita enabled
 window-theme = ghostty
+
+window-save-state = always
 
 keybind = ctrl+shift+r=reload_config
 
@@ -30,3 +35,7 @@ keybind = ctrl+shift+-=new_split:down
 keybind = ctrl+shift+\=new_split:right
 keybind = ctrl+shift+t=new_tab
 keybind = ctrl+shift+x=close_surface
+keybind = ctrl+alt+j=goto_split:down
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+l=goto_split:right
+keybind = ctrl+alt+k=goto_split:up
