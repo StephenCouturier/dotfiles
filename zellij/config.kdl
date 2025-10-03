@@ -251,12 +251,29 @@ web_client {
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "gruvbox-dark"
+
+themes {
+    gruvbox-dark-custom {
+        fg "#ebdbb2"
+        bg "#282828"
+        black "#282828"
+        red "#cc241d"
+        green "#689d6a"  // Change this to your preferred color
+        yellow "#d79921"
+        blue "#458588"
+        magenta "#b16286"
+        cyan "#689d6a"
+        white "#a89984"
+        orange "#d65d0e"
+    }
+}
+
+theme "gruvbox-dark-custom"
  
 // Choose the base input mode of zellij.
 // Default: normal
