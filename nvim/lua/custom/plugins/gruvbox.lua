@@ -13,6 +13,10 @@ return {
           comments = { italic = false }, -- Disable italics in comments
         },
         transparent_mode = true,
+        overrides = {
+          CursorLine = { bg = 'NONE' },
+          CursorLineNr = { fg = '#fabd2f', bg = 'NONE', bold = true },
+        },
       }
 
       -- Load the colorscheme here.
