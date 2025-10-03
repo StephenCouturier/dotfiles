@@ -30,6 +30,8 @@ window-theme = ghostty
 
 window-save-state = always
 
+command = zellij
+
 keybind = ctrl+shift+r=reload_config
 
 keybind = ctrl+shift+-=new_split:down
