@@ -167,6 +167,7 @@ alias zs="source ~/.zshrc"
 alias g="lazygit"
 alias v="nvim"
 alias oc="opencode"
+alias os="cd ~/Projects/surefin"
 alias z="zoxide"
 
 export EDITOR=nvim
