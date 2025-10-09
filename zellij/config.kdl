@@ -25,10 +25,10 @@ keybinds clear-defaults=true {
         bind "t" { NewTab; SwitchToMode "locked"; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
         bind "x" { CloseFocus; SwitchToMode "locked"; }
-        bind "H" { Resize "Decrease left"; }
-        bind "J" { Resize "Decrease down"; }
-        bind "K" { Resize "Decrease up"; }
-        bind "L" { Resize "Decrease right"; }
+        bind "H" { Resize "Increase Left"; }
+        bind "J" { Resize "Increase Down"; }
+        bind "K" { Resize "Increase Up"; }
+        bind "L" { Resize "Increase Right"; }
         bind "/" { Search "down"; }
         bind "?" { Search "up"; }
         bind "Q" { Quit; }
