@@ -10,7 +10,7 @@ gtk-custom-css = tab-style.css
 
 # disable dlig so that we see `--` instead of something like `—`
 font-feature = -dlig
-font-size = 12
+font-size = 14
 
 # https://ghostty.org/docs/config/reference#window-save-state
 # This is currently only supported on macOS. This has no effect on Linux.
