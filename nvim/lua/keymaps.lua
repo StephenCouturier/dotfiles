@@ -13,8 +13,8 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-vim.keymap.set('n', '<leader>ov', '<C-w>v<CR>', { desc = 'Split Window' })
-vim.keymap.set('n', '<leader>oh', '<C-w>s<CR>', { desc = 'Split Window Horizontally' })
+vim.keymap.set('n', '<leader>\\', '<C-w>v<CR>', { desc = 'Split Window' })
+vim.keymap.set('n', '<leader>-', '<C-w>s<CR>', { desc = 'Split Window Horizontally' })
 vim.keymap.set('n', '<leader>O', ':OrganizeImports<CR>', { desc = '[O]rganize Imports' })
 
 vim.keymap.set('n', '<leader>go', ':GBrowse<CR>', { desc = 'Open Remote' })
