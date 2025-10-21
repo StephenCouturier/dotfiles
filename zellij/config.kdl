@@ -32,6 +32,7 @@ keybinds clear-defaults=true {
         bind "/" { Search "down"; }
         bind "?" { Search "up"; }
         bind "Q" { Quit; }
+        bind "esc" { SwitchToMode "locked"; }
     }
 
     renametab {
