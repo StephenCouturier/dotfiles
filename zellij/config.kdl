@@ -101,7 +101,7 @@ default_mode "locked"
 // 
 // default_cwd "/tmp"
  
-default_layout "compact-top"
+default_layout "dotfiles-nvim"
 // default_layout "with-status"
  
 layout_dir "/Users/stephencouturier/dotfiles/zellij/layouts"

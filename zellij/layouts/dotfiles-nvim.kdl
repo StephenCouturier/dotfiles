@@ -1,0 +1,49 @@
+layout {
+    cwd "/Users/stephencouturier"
+    tab name="RM NVIM" focus=true hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane cwd="Projects/risk-management"
+    }
+    tab name="SF NVIM" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane cwd="Projects/surefin"
+    }
+    tab name="Services" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane size="50%" split_direction="vertical" {
+            pane cwd="Projects/risk-management" size="50%"
+            pane cwd="Projects/surefin" size="50%"
+        }
+        pane size="50%" split_direction="vertical" {
+            pane cwd="Projects/surefin" size="50%"
+            pane cwd="Projects/surefin" size="50%"
+        }
+    }
+    tab name="Review" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane split_direction="vertical" {
+            pane cwd="Projects/risk-management" size="50%"
+            pane cwd="Projects/surefin" size="50%"
+        }
+    }
+    tab name="Misc" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane focus=true
+    }
+    new_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane split_direction="vertical"
+    }
+}

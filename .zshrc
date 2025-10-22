@@ -169,6 +169,7 @@ alias v="nvim"
 alias oc="opencode"
 alias os="cd ~/Projects/surefin"
 alias z="zoxide"
+alias gd="gh dash"
 
 export EDITOR=nvim
 
