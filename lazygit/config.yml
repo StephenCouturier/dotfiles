@@ -1,0 +1,4 @@
+git:
+  pagers:
+    - pager: delta -- side-by-side --line-numbers
+
