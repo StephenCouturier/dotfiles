@@ -151,6 +151,7 @@ alias ymg="yarn sequelize migration:generate --name $1"
 alias b="yarn build"
 alias greset="git fetch origin && git reset --hard origin/main"
 alias prdb=”/opt/local/bin/prdb.sh”
+alias sup="yarn install && cd package/db && yarn db:migrate dev && yarn generate && DATABASE_URL=postgresql://stephencouturier@localhost:5432/surefin_test yarn db:migrate dev && cd ../.."
 
 alias ysd="yarn start:debug"
 alias ytd="yarn test:debug"
@@ -175,6 +176,9 @@ export EDITOR=nvim
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# Enable Corepack for package manager version management
+corepack enable 2>/dev/null
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
