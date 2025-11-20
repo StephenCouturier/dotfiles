@@ -161,7 +161,7 @@ alias vtdb="f() {TEST_FILE=$1 yarn test:debugb};f"
 
 alias conp="heroku run yarn workspace api console --app obie-private-rm-production --size=Private-M  2>&1 | tee ~/logs/console/$(date +"%Y%m%d%H%M").log"
 
-alias conr="heroku run yarn workspace api console --app $1 --size=Performance-M  2>&1 | tee ~/logs/console/$(date +"%Y%m%d%H%M").log"
+alias conr="heroku run yarn workspace api console --app $1 --size=Performance-M"
 
 alias zc="nvim ~/.zshrc"
 alias zs="source ~/.zshrc"

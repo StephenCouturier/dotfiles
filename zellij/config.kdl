@@ -29,10 +29,30 @@ keybinds clear-defaults=true {
         bind "J" { Resize "Increase Down"; }
         bind "K" { Resize "Increase Up"; }
         bind "L" { Resize "Increase Right"; }
-        bind "/" { Search "down"; }
-        bind "?" { Search "up"; }
+        bind "/" { SwitchToMode "entersearch"; SearchInput 0; }
         bind "Q" { Quit; }
         bind "esc" { SwitchToMode "locked"; }
+    }
+
+    search {
+        bind "Ctrl c" { ScrollToBottom; SwitchToMode "normal"; }
+        bind "j" "Down" { Search "down"; }
+        bind "k" "Up" { Search "up"; }
+        bind "Ctrl n" "PageDown" { PageScrollDown; }
+        bind "Ctrl p" "PageUp" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+        bind "n" { Search "down"; }
+        bind "p" { Search "up"; }
+        bind "esc" { ScrollToBottom; SwitchToMode "locked"; }
+    }
+
+    entersearch {
+        bind "Ctrl c" "esc" { SwitchToMode "locked"; }
+        bind "enter" { SwitchToMode "search"; }
     }
 
     renametab {
@@ -40,6 +60,9 @@ keybinds clear-defaults=true {
     }
     shared_among "renametab" "renamepane" {
         bind "enter" { SwitchToMode "locked"; }
+    }
+    shared_among "search" "entersearch" {
+        bind "esc" { ScrollToBottom; SwitchToMode "locked"; }
     }
 }
 
