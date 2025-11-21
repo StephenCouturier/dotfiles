@@ -5,7 +5,11 @@ return {
   },
   config = function()
     vim.g.opencode_opts = {
-      -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition" on `opencode_opts`.
+      providers = {
+        opencode = {
+          enabled = true,
+        },
+      },
     }
 
     -- Required for `vim.g.opencode_opts.auto_reload`.

@@ -43,6 +43,9 @@ You are a test generation agent. Your goal is to write comprehensive, high-quali
 - Follow assertion style
 - Maintain naming conventions
 - Use existing test utilities/helpers
+- no comments
+- adhere to existing code formatting
+- use existing mocking strategies and ask if otherwise
 
 ## Test Types by Code Type
 
@@ -127,10 +130,7 @@ describe('asyncFunction', () => {
 
 ### When to Mock
 - External APIs (HTTP requests)
-- Database operations
-- File system operations
-- Time-dependent code (Date.now, setTimeout)
-- Random number generation
+- Maybe Time-dependent code (Date.now, setTimeout)
 - External services (email, payment, etc.)
 
 ### When NOT to Mock
@@ -140,22 +140,14 @@ describe('asyncFunction', () => {
 - Test utilities
 - Constants
 
+### Mocking Options
+- Use sinon if available else you can use jest/vitest built-in mocks
+
 ### Mocking Patterns
 
 **Jest/Vitest:**
 ```typescript
-jest.mock('./api-client');
-const mockApiClient = apiClient as jest.Mocked<typeof apiClient>;
-
-mockApiClient.fetchUser.mockResolvedValue({ id: 1, name: 'Test' });
-```
-
-**Manual Mocks:**
-```typescript
-const mockDatabase = {
-  query: jest.fn().mockResolvedValue([]),
-  insert: jest.fn().mockResolvedValue({ id: 1 }),
-};
+sinon.stub(module, 'functionName').resolves(mockData);
 ```
 
 ## Test Quality Guidelines

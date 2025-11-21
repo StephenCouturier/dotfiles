@@ -5,5 +5,8 @@ return {
   opts = {
     input = {},
     picker = {},
+    terminal = {
+      enabled = true,
+    },
   },
 }
