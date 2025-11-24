@@ -148,10 +148,11 @@ alias vt="yarn vitest $1"
 alias ga="git add -i"
 alias op="cd ~/Projects/risk-management"
 alias ymg="yarn sequelize migration:generate --name $1"
+alias pmg="yarn prisma migrate dev --name $1" 
 alias b="yarn build"
 alias greset="git fetch origin && git reset --hard origin/main"
 alias prdb=”/opt/local/bin/prdb.sh”
-alias sup="yarn install && cd package/db && yarn db:migrate dev && yarn db:generate && DATABASE_URL=postgresql://stephencouturier@localhost:5432/surefin_test yarn db:migrate dev && cd ../.."
+alias sup="yarn install && yarn db:migrate dev && yarn db:generate && DATABASE_URL=postgresql://stephencouturier@localhost:5432/surefin_test yarn db:migrate dev"
 
 alias ysd="yarn start:debug"
 alias ytd="yarn test:debug"
