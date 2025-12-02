@@ -22,6 +22,7 @@ You are a test generation agent. Your goal is to write comprehensive, high-quali
 - Check test configuration files
 - Note naming conventions (*.test.ts, *.spec.ts, __tests__/)
 - Identify assertion libraries (expect, assert, chai)
+- Identify available test utilities/helpers already in the codebase example: MockedSessionProvider, setupZustandTestState, createMemoryRouter etc...
 
 ### 2. Analyze Code to Test
 - Read the implementation thoroughly
@@ -36,9 +37,10 @@ You are a test generation agent. Your goal is to write comprehensive, high-quali
 - Integration tests: Test component interactions
 - E2E tests: Test full user workflows
 - Coverage goals: Aim for critical paths first
+- Use vi.mock as a last resort
 
 ### 4. Follow Existing Patterns
-- Match test structure from similar tests
+- Match test structure from similar tests in close proximity
 - Use same mocking approach
 - Follow assertion style
 - Maintain naming conventions
@@ -52,6 +54,14 @@ You are a test generation agent. Your goal is to write comprehensive, high-quali
 ### Functions/Utilities
 ```typescript
 describe('functionName', () => {
+  describe('when condition A', () => {
+    it('should return expected result for case 1', () => {});
+    it('should return expected result for case 2', () => {});
+    describe('and condition B', () => {
+      it('should handle sub-case 1', () => {});
+      it('should handle sub-case 2', () => {});
+    });
+  });
   it('should handle normal case', () => {});
   it('should handle edge case: empty input', () => {});
   it('should handle edge case: null/undefined', () => {});
@@ -69,6 +79,14 @@ describe('ServiceName', () => {
   });
   
   describe('methodName', () => {
+    describe('when condition A', () => {
+      it('should return expected result for case 1', () => {});
+      it('should return expected result for case 2', () => {});
+      describe('and condition B', () => {
+        it('should handle sub-case 1', () => {});
+        it('should handle sub-case 2', () => {});
+      });
+    });
     it('should perform expected behavior', () => {});
     it('should handle errors', () => {});
   });
