@@ -168,15 +168,6 @@ return {
         vim.lsp.buf.execute_command(params)
       end
 
-      -- Auto organize imports on save for TypeScript/JavaScript
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        group = vim.api.nvim_create_augroup('organize-imports-on-save', { clear = true }),
-        pattern = { '*.ts', '*.tsx', '*.js', '*.jsx' },
-        callback = function()
-          organize_imports()
-        end,
-      })
-
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {

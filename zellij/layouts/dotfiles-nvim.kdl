@@ -34,6 +34,12 @@ layout {
             pane cwd="Projects/surefin" size="50%"
         }
     }
+    tab name="DB" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane focus=true
+    }
     tab name="Misc" hide_floating_panes=true {
         pane size=1 borderless=true {
             plugin location="zellij:compact-bar"

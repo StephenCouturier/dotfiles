@@ -152,7 +152,7 @@ alias pmg="yarn prisma migrate dev --name $1"
 alias b="yarn build"
 alias greset="git fetch origin && git reset --hard origin/main"
 alias prdb=”/opt/local/bin/prdb.sh”
-alias sup="yarn install && yarn db:migrate dev && yarn db:generate && DATABASE_URL=postgresql://stephencouturier@localhost:5432/surefin_test yarn db:migrate dev"
+alias sup="yarn install && yarn migrate dev && yarn generate && DATABASE_URL=postgresql://stephencouturier@localhost:5432/surefin_test yarn migrate dev"
 
 alias ysd="yarn start:debug"
 alias ytd="yarn test:debug"
