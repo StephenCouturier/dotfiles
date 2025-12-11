@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>go', ':GBrowse<CR>', { desc = 'Open Remote' })
 
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = '[Q]uit nvim' })
 vim.keymap.set('n', '<leader>Q', ':q!<CR>', { desc = 'Force [Q]uit nvim' })
-vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = '[W]rite file' })
+vim.keymap.set('n', '<leader>w', ':w!<CR>', { desc = '[W]rite file' })
 vim.keymap.set('n', '<leader>W', ':wa<CR>', { desc = '[W]rite [A]ll files' })
 vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close buffer' })
 vim.keymap.set('n', '<leader>X', ':bd!<CR>', { desc = 'Force Close buffer' })

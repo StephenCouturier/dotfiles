@@ -1,7 +1,7 @@
 ---
 description: Runs tests, analyzes failures, and suggests fixes
 mode: subagent
-model: anthropic/claude-sonnet-4-20250514
+model: anthropic/claude-opus-4-20250514
 temperature: 0.0
 tools:
   write: false
