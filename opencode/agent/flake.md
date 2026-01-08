@@ -1,7 +1,7 @@
 ---
 description: Looks for potential flaky tests and identifies possible causes
 mode: primary
-model: anthropic/claude-opus-4-20250514
+model: anthropic/claude-opus-4-5-20250514
 temperature: 0.1
 tools:
   write: false

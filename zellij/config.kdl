@@ -1,6 +1,8 @@
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl s" { SwitchToMode "normal"; }
+        bind "Alt n" { GoToNextTab; }
+        bind "Alt p" { GoToPreviousTab; }
     }
     normal{
         bind "h" { MoveFocus "left"; SwitchToMode "locked"; }

@@ -1,7 +1,7 @@
 ---
 description: Generates tests based on existing code and patterns
 mode: primary
-model: anthropic/claude-opus-4-20250514
+model: anthropic/claude-opus-4-5-20250514
 temperature: 0.2
 tools:
   write: true
