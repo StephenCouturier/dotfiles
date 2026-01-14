@@ -17,6 +17,17 @@ vim.keymap.set('n', '<leader>\\', '<C-w>v<CR>', { desc = 'Split Window' })
 vim.keymap.set('n', '<leader>-', '<C-w>s<CR>', { desc = 'Split Window Horizontally' })
 vim.keymap.set('n', '<leader>O', ':OrganizeImports<CR>', { desc = '[O]rganize Imports' })
 
+-- ESLint fix current file (run from monorepo root)
+vim.keymap.set('n', '<leader>lf', function()
+  local file = vim.fn.expand '%:p'
+  local root = vim.fn.finddir('.git/..', vim.fn.expand '%:p:h' .. ';')
+  if root == '' then
+    root = vim.fn.getcwd()
+  end
+  vim.cmd('!' .. 'cd ' .. root .. ' && npx eslint --fix ' .. file)
+  vim.cmd 'e!'
+end, { desc = '[L]int [F]ix current file' })
+
 vim.keymap.set('n', '<leader>go', ':GBrowse<CR>', { desc = 'Open Remote' })
 
 vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = '[Q]uit nvim' })

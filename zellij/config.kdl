@@ -1,6 +1,6 @@
 keybinds clear-defaults=true {
     locked {
-        bind "Ctrl s" { SwitchToMode "normal"; }
+        bind "Ctrl a" { SwitchToMode "normal"; }
         bind "Alt n" { GoToNextTab; }
         bind "Alt p" { GoToPreviousTab; }
     }
@@ -12,7 +12,7 @@ keybinds clear-defaults=true {
         bind "-" { NewPane "down"; SwitchToMode "locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
         bind "\\" { NewPane; SwitchToMode "locked"; }
-        bind "Ctrl s" { SwitchToMode "locked"; }
+        bind "Ctrl a" { SwitchToMode "locked"; }
         bind "p" { GoToPreviousTab; }
         bind "n" { GoToNextTab; }
         bind "1" { GoToTab 1; SwitchToMode "locked"; }
