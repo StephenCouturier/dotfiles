@@ -1,6 +1,6 @@
 ---
 description: Generates tests based on existing code and patterns
-mode: primary
+mode: subagent 
 model: anthropic/claude-opus-4-5-20250514
 temperature: 0.2
 tools:

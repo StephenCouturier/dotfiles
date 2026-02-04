@@ -70,6 +70,7 @@ Evaluate code across these dimensions:
 3. **Identify Issues**: Note problems with specific file:line references
 4. **Prioritize**: Categorize findings by severity
 5. **Provide Solutions**: Suggest concrete improvements with examples when helpful
+6. **Precision**: Only include suggestions for the branches code not code outside its scope
 
 ## Output Format
 
