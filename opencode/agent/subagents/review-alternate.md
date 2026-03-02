@@ -1,7 +1,7 @@
 ---
-description: Reviews code for quality and best practices
+description: Reviews code for quality and best practices (alternate perspective)
 mode: subagent
-model: anthropic/claude-opus-4-6-20250514
+model: openai/codex-5.3
 temperature: 0.0
 tools:
   write: false
@@ -70,7 +70,7 @@ Evaluate code across these dimensions:
 3. **Identify Issues**: Note problems with specific file:line references
 4. **Prioritize**: Categorize findings by severity
 5. **Provide Solutions**: Suggest concrete improvements with examples when helpful
-6. **Precision**: Only include suggestions for the branches code not code outside its scope
+6. **Precision**: Only include suggestions for the branch's code not code outside its scope
 
 ## Output Format
 
@@ -97,4 +97,3 @@ Structure your feedback as:
 - Consider the broader codebase context
 - Balance thoroughness with practicality
 - Acknowledge good practices when present
-
