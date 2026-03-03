@@ -1,7 +1,7 @@
 ---
 description: Manages dependencies, updates, and security patches
 mode: primary
-model: anthropic/claude-opus-4-6-20250514
+model: anthropic/claude-opus-4-5
 temperature: 0.0
 tools:
   write: true

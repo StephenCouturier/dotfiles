@@ -1,8 +1,8 @@
 ---
 description: Reviews code for quality and best practices
 mode: subagent
-model: anthropic/claude-opus-4-6-20250514
-temperature: 0.0
+model: anthropic/claude-opus-4-5
+temperature: 0.1
 tools:
   write: false
   edit: false

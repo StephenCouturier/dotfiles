@@ -1,7 +1,7 @@
 ---
 description: Reviews code for quality and best practices (alternate perspective)
 mode: subagent
-model: openai/codex-5.3
+model: openai/gpt-5.1-codex
 temperature: 0.0
 tools:
   write: false
