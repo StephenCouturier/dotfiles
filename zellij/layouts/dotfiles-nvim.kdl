@@ -31,20 +31,38 @@ layout {
         }
         pane split_direction="vertical" {
             pane cwd="Projects/risk-management" size="50%"
-            pane cwd="Projects/surefin" size="50%"
+            pane cwd="Projects/risk-management" size="50%"
         }
     }
     tab name="DB" hide_floating_panes=true {
         pane size=1 borderless=true {
             plugin location="zellij:compact-bar"
         }
-        pane focus=true
+        pane cwd="Projects/risk-management"
     }
     tab name="Misc" hide_floating_panes=true {
         pane size=1 borderless=true {
             plugin location="zellij:compact-bar"
         }
         pane focus=true
+    }
+    tab name="7:rules"  hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane cwd="Projects/rules-engine"
+    }
+    tab name="8:wk1" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane cwd="Projects/wk1"
+    }
+    tab name="9:wk2" hide_floating_panes=true {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane cwd="Projects/wk2"
     }
     new_tab_template {
         pane size=1 borderless=true {

@@ -51,8 +51,27 @@ vim.keymap.set('n', '<leader>hk', ":lua require('harpoon.ui').nav_file(2)<CR>")
 vim.keymap.set('n', '<leader>hl', ":lua require('harpoon.ui').nav_file(3)<CR>")
 vim.keymap.set('n', '<leader>hm', ":lua require('harpoon.ui').nav_file(4)<CR>")
 
-vim.keymap.set('n', '<leader>y', 'gg^vG$y')
+vim.keymap.set('n', '<leader>yy', 'gg^vG$y')
 vim.keymap.set('n', '<leader>v', 'gg^vG$')
+vim.keymap.set('n', '<leader>yl', function()
+  local filepath = vim.fn.expand '%'
+  local line = vim.fn.line '.'
+  local result = filepath .. ':' .. line
+  vim.fn.setreg('+', result)
+  vim.notify('Copied: ' .. result)
+end, { desc = '[Y]ank file path and [L]ine number' })
+
+vim.keymap.set('v', '<leader>yl', function()
+  local path = vim.fn.expand '%:p'
+  local start_line = vim.fn.line 'v'
+  local end_line = vim.fn.line '.'
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+  local result = path .. ':' .. start_line .. '-' .. end_line
+  vim.fn.setreg('+', result)
+  vim.notify('Copied: ' .. result)
+end, { desc = '[Y]ank file path and [L]ine numbers for selection' })
 
 vim.keymap.set('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Open floating [L]sp [D]iagnostic message' })
 vim.keymap.set('n', '<leader>ll', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })

@@ -44,18 +44,24 @@ Always dispatch to ALL THREE of these specialized reviewers in parallel:
 Structure your feedback as:
 
 **CRITICAL** (must fix - security, correctness)
-- `file.ts:42` - Specific issue description and suggested fix [integration, architecture]
+- `file.ts:42` [NEW] - Specific issue description and suggested fix [integration, architecture]
 
 **WARNING** (should fix - bugs, performance, maintainability)
-- `file.ts:89` - Specific issue description and suggested fix [alternate]
+- `file.ts:89` [EXISTING] - Specific issue description and suggested fix [alternate]
 
 **SUGGESTION** (consider - style, best practices, optimization)
-- `file.ts:156` - Specific issue description and suggested fix [integration, alternate]
+- `file.ts:156` [NEW] - Specific issue description and suggested fix [integration, alternate]
 
 **POSITIVE** (good patterns worth highlighting)
-- `file.ts:203` - What was done well [architecture]
+- `file.ts:203` [NEW] - What was done well [architecture]
 
-Always include attribution tags at the end of each item showing which reviewer(s) flagged it:
+Each item includes two tags:
+
+**Relevance tag** (after file:line):
+- `[NEW]` - Issue introduced by or directly related to the current change
+- `[EXISTING]` - Pre-existing issue not caused by the current change
+
+**Attribution tag** (at end):
 - `[integration]` - review-integration (Claude Opus)
 - `[architecture]` - review-architecture (Claude Opus)
 - `[alternate]` - review-alternate (GPT Codex)
@@ -67,9 +73,11 @@ Always include attribution tags at the end of each item showing which reviewer(s
 - Provide rationale for each recommendation
 - Include code examples when helpful
 - Reference line numbers: `file.ts:42`
+- ALWAYS include [NEW] or [EXISTING] tag for every item
+- ALWAYS include attribution tags showing which reviewer(s) flagged it
+- Prioritize [NEW] issues as they are most relevant to the change
+- When multiple reviewers flag the same issue, list all of them
 - Consider the broader codebase context
 - Balance thoroughness with practicality
 - Acknowledge good practices when present
-- ALWAYS include attribution tags for every item showing which reviewer(s) flagged it
-- When multiple reviewers flag the same issue, list all of them (e.g., `[integration, architecture]`)
 - Prioritize clarity over completeness when condensing

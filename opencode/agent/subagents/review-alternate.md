@@ -1,7 +1,7 @@
 ---
 description: Reviews code for quality and best practices (alternate perspective)
 mode: subagent
-model: openai/gpt-5.1-codex
+model: openai/gpt-5.3-codex
 temperature: 0.0
 tools:
   write: false
@@ -77,16 +77,20 @@ Evaluate code across these dimensions:
 Structure your feedback as:
 
 **CRITICAL** (must fix - security, correctness)
-- `file.ts:42` - Specific issue description and suggested fix
+- `file.ts:42` [NEW] - Specific issue description and suggested fix
 
 **WARNING** (should fix - bugs, performance, maintainability)
-- `file.ts:89` - Specific issue description and suggested fix
+- `file.ts:89` [EXISTING] - Specific issue description and suggested fix
 
 **SUGGESTION** (consider - style, best practices, optimization)
-- `file.ts:156` - Specific issue description and suggested fix
+- `file.ts:156` [NEW] - Specific issue description and suggested fix
 
 **POSITIVE** (good patterns worth highlighting)
-- `file.ts:203` - What was done well
+- `file.ts:203` [NEW] - What was done well
+
+Tag each item as:
+- `[NEW]` - Issue introduced by or directly related to the current change
+- `[EXISTING]` - Pre-existing issue not caused by the current change
 
 ## Guidelines
 
@@ -94,6 +98,8 @@ Structure your feedback as:
 - Provide rationale for each recommendation
 - Include code examples when helpful
 - Reference line numbers: `file.ts:42`
+- ALWAYS tag each item as [NEW] or [EXISTING]
+- Prioritize [NEW] issues as they are most relevant to the change
 - Consider the broader codebase context
 - Balance thoroughness with practicality
 - Acknowledge good practices when present
