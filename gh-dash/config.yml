@@ -36,6 +36,11 @@ defaults:
   prsLimit: 20
   issuesLimit: 20
 
+keybindings:
+  prs:
+    - key: b
+      command: echo {{.HeadRefName}} | pbcopy
+
 theme:
   ui:
     sectionsShowCount: true
