@@ -1,7 +1,7 @@
 ---
 description: Plans complex refactoring with impact analysis
 mode: subagent
-model: anthropic/claude-opus-4-5
+model: anthropic/claude-opus-4-6
 temperature: 0.0
 tools:
   write: false
