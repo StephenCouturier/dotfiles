@@ -31,7 +31,7 @@ window-theme = ghostty
 
 window-save-state = always
 
-command = /opt/homebrew/bin/zellij
+command = /home/steve/.local/bin/herdr
 
 keybind = ctrl+shift+r=reload_config
 
