@@ -4,11 +4,14 @@ yabai -m config layout bsp
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
 
-yabai -m config top_padding 5 
-yabai -m config bottom_padding 5
-yabai -m config left_padding 5
-yabai -m config right_padding 5 
-yabai -m config window_gap 5 
+# reserve space for sketchybar (bar height 42)
+yabai -m config external_bar all:42:0
+
+yabai -m config top_padding 0 
+yabai -m config bottom_padding 0
+yabai -m config left_padding 0
+yabai -m config right_padding 0 
+yabai -m config window_gap 0 
 
 # center mouse on window with focus
 yabai -m config mouse_follows_focus on

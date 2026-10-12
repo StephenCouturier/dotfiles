@@ -1,0 +1,19 @@
+{
+  "theme": "gruvbox-dark",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-5",
+  "defaultThinkingLevel": "medium",
+  "editorPaddingX": 1,
+  "quietStartup": true,
+  "enableInstallTelemetry": false,
+  "defaultProjectTrust": "always",
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "lastChangelogVersion": "1.0.0",
+  "packages": [
+    "npm:@ifi/oh-pi-themes",
+    "git:github.com/StephenCouturier/llm-review@v0.2.0"
+  ],
+  "tuiMode": "fullscreen"
+}

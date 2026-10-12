@@ -100,23 +100,135 @@ web_client {
 simplified_ui true
 
 themes {
-    gruvbox-dark-custom {
-        // transparent true
-        fg "#ebdbb2"
-        bg "#282828"
-        black "#282828"
-        red "#cc241d"
-        green "#d79921"
-        yellow "#d79921"
-        blue "#458588"
-        magenta "#b16286"
-        cyan "#689d6a"
-        white "#a89984"
-        orange "#d65d0e"
+    mono {
+        text_unselected {
+            base "#d0d0d0"
+            background "#000000"
+            emphasis_0 "#000000"
+            emphasis_1 "#000000"
+            emphasis_2 "#000000"
+            emphasis_3 "#000000"
+        }
+        text_selected {
+            base "#000000"
+            background "#ffffff"
+            emphasis_0 "#000000"
+            emphasis_1 "#000000"
+            emphasis_2 "#000000"
+            emphasis_3 "#000000"
+        }
+        ribbon_unselected {
+            base "#d0d0d0"
+            background "#000000"
+            emphasis_0 "#000000"
+            emphasis_1 "#000000"
+            emphasis_2 "#000000"
+            emphasis_3 "#000000"
+        }
+        ribbon_selected {
+            base "#000000"
+            background "#ffffff"
+            emphasis_0 "#000000"
+            emphasis_1 "#000000"
+            emphasis_2 "#000000"
+            emphasis_3 "#000000"
+        }
+        table_title {
+            base "#ffffff"
+            background "#000000"
+            emphasis_0 "#ffffff"
+            emphasis_1 "#ffffff"
+            emphasis_2 "#ffffff"
+            emphasis_3 "#ffffff"
+        }
+        table_cell_unselected {
+            base "#6e6e6e"
+            background "#000000"
+            emphasis_0 "#6e6e6e"
+            emphasis_1 "#6e6e6e"
+            emphasis_2 "#6e6e6e"
+            emphasis_3 "#6e6e6e"
+        }
+        table_cell_selected {
+            base "#000000"
+            background "#ffffff"
+            emphasis_0 "#000000"
+            emphasis_1 "#000000"
+            emphasis_2 "#000000"
+            emphasis_3 "#000000"
+        }
+        list_unselected {
+            base "#6e6e6e"
+            background "#000000"
+            emphasis_0 "#6e6e6e"
+            emphasis_1 "#6e6e6e"
+            emphasis_2 "#6e6e6e"
+            emphasis_3 "#6e6e6e"
+        }
+        list_selected {
+            base "#000000"
+            background "#ffffff"
+            emphasis_0 "#000000"
+            emphasis_1 "#000000"
+            emphasis_2 "#000000"
+            emphasis_3 "#000000"
+        }
+        frame_unselected {
+            base "#6e6e6e"
+            background "#000000"
+            emphasis_0 "#6e6e6e"
+            emphasis_1 "#6e6e6e"
+            emphasis_2 "#6e6e6e"
+            emphasis_3 "#6e6e6e"
+        }
+        frame_selected {
+            base "#ffffff"
+            background "#000000"
+            emphasis_0 "#ffffff"
+            emphasis_1 "#ffffff"
+            emphasis_2 "#ffffff"
+            emphasis_3 "#ffffff"
+        }
+        frame_highlight {
+            base "#ffffff"
+            background "#000000"
+            emphasis_0 "#ffffff"
+            emphasis_1 "#ffffff"
+            emphasis_2 "#ffffff"
+            emphasis_3 "#ffffff"
+        }
+        exit_code_success {
+            base "#ffffff"
+            background "#000000"
+            emphasis_0 "#ffffff"
+            emphasis_1 "#ffffff"
+            emphasis_2 "#ffffff"
+            emphasis_3 "#ffffff"
+        }
+        exit_code_error {
+            base "#ffffff"
+            background "#000000"
+            emphasis_0 "#ffffff"
+            emphasis_1 "#ffffff"
+            emphasis_2 "#ffffff"
+            emphasis_3 "#ffffff"
+        }
+        multiplayer_user_colors {
+            player_1 "#ffffff"
+            player_2 "#ffffff"
+            player_3 "#ffffff"
+            player_4 "#ffffff"
+            player_5 "#ffffff"
+            player_6 "#ffffff"
+            player_7 "#ffffff"
+            player_8 "#ffffff"
+            player_9 "#ffffff"
+            player_10 "#ffffff"
+        }
     }
 }
 
-theme "gruvbox-dark-custom"
+theme "mono"
  
 // Choose the base input mode of zellij.
 // Default: normal

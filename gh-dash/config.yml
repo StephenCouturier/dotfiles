@@ -1,3 +1,6 @@
+repoPaths:
+  ObieCRE/risk-management: ~/Projects/review
+
 prSections:
   - title: "My Pull Requests"
     filters: "is:open author:@me"
@@ -15,7 +18,7 @@ issuesSections:
     filters: "is:open involves:@me -author:@me"
 
 pager:
-  diff: delta --side-by-side 
+  diff: delta --side-by-side
 showAuthorIcons: true
 smartFilteringAtLaunch: true
 
@@ -25,7 +28,7 @@ defaults:
   layout:
     prs:
       repoName:
-        grow: true,
+        grow: true
         width: 10
         hidden: false
       base:
