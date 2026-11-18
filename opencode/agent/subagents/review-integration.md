@@ -1,7 +1,7 @@
 ---
 description: Reviews code integration, codebase consistency, and identifies duplication
 mode: subagent
-model: anthropic/claude-opus-4-6
+model: anthropic/claude-opus-5-5
 temperature: 0.0
 tools:
   write: false

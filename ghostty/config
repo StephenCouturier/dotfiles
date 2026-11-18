@@ -32,7 +32,8 @@ window-theme = ghostty
 
 window-save-state = always
 
-command = /home/steve/.local/bin/herdr
+# machine-specific settings (command, etc.) — not tracked
+config-file = ?local.conf
 
 keybind = ctrl+shift+r=reload_config
 

@@ -1,0 +1,741 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "w7",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/risk-management",
+      "public_pane_numbers": {
+        "53": 36,
+        "8": 13,
+        "100": 67,
+        "107": 74,
+        "10": 15,
+        "5": 3,
+        "106": 73,
+        "110": 75,
+        "103": 70,
+        "11": 17
+      },
+      "next_public_pane_number": 76,
+      "public_tab_numbers": [
+        10,
+        8,
+        3,
+        5,
+        6,
+        7
+      ],
+      "next_public_tab_number": 11,
+      "tabs": [
+        {
+          "custom_name": "Editor",
+          "layout": {
+            "Split": {
+              "direction": "Vertical",
+              "ratio": 0.2,
+              "first": {
+                "Pane": 100
+              },
+              "second": {
+                "Pane": 110
+              }
+            }
+          },
+          "panes": {
+            "100": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            },
+            "110": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": true,
+          "focused": 110,
+          "root_pane": 100
+        },
+        {
+          "custom_name": "processes",
+          "layout": {
+            "Pane": 11
+          },
+          "panes": {
+            "11": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 11,
+          "root_pane": 11
+        },
+        {
+          "custom_name": "DB",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 5
+              },
+              "second": {
+                "Split": {
+                  "direction": "Vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "Pane": 106
+                  },
+                  "second": {
+                    "Pane": 107
+                  }
+                }
+              }
+            }
+          },
+          "panes": {
+            "106": {
+              "cwd": "/Users/stephencouturier/Scripts"
+            },
+            "5": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            },
+            "107": {
+              "cwd": "/Users/stephencouturier/Scripts"
+            }
+          },
+          "zoomed": false,
+          "focused": 5,
+          "root_pane": 5
+        },
+        {
+          "custom_name": "Scrap",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 53
+              },
+              "second": {
+                "Pane": 103
+              }
+            }
+          },
+          "panes": {
+            "103": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            },
+            "53": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 53,
+          "root_pane": 53
+        },
+        {
+          "custom_name": "Editor 2",
+          "layout": {
+            "Pane": 8
+          },
+          "panes": {
+            "8": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 8,
+          "root_pane": 8
+        },
+        {
+          "custom_name": "DB 2",
+          "layout": {
+            "Pane": 10
+          },
+          "panes": {
+            "10": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 10,
+          "root_pane": 10
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w4",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1",
+      "public_pane_numbers": {
+        "81": 5,
+        "109": 7
+      },
+      "next_public_pane_number": 8,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 81
+              },
+              "second": {
+                "Pane": 109
+              }
+            }
+          },
+          "panes": {
+            "109": {
+              "cwd": "/Users/stephencouturier/Projects/wk1"
+            },
+            "81": {
+              "cwd": "/Users/stephencouturier/Projects/wk1"
+            }
+          },
+          "zoomed": false,
+          "focused": 109,
+          "root_pane": 81
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w5",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk2",
+      "public_pane_numbers": {
+        "91": 11,
+        "15": 2
+      },
+      "next_public_pane_number": 12,
+      "public_tab_numbers": [
+        2
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 15
+              },
+              "second": {
+                "Pane": 91
+              }
+            }
+          },
+          "panes": {
+            "15": {
+              "cwd": "/Users/stephencouturier/Projects/wk2"
+            },
+            "91": {
+              "cwd": "/Users/stephencouturier/Projects/wk2"
+            }
+          },
+          "zoomed": false,
+          "focused": 91,
+          "root_pane": 15
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w2",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/review",
+      "public_pane_numbers": {
+        "18": 4,
+        "16": 1,
+        "71": 8,
+        "62": 5,
+        "63": 6
+      },
+      "next_public_pane_number": 9,
+      "public_tab_numbers": [
+        1,
+        3,
+        4
+      ],
+      "next_public_tab_number": 5,
+      "tabs": [
+        {
+          "custom_name": "review 1",
+          "layout": {
+            "Pane": 16
+          },
+          "panes": {
+            "16": {
+              "cwd": "/Users/stephencouturier/Projects/review"
+            }
+          },
+          "zoomed": false,
+          "focused": 16,
+          "root_pane": 16
+        },
+        {
+          "custom_name": "review 2",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 62
+              },
+              "second": {
+                "Pane": 63
+              }
+            }
+          },
+          "panes": {
+            "62": {
+              "cwd": "/Users/stephencouturier/Projects/review2"
+            },
+            "63": {
+              "cwd": "/Users/stephencouturier/Projects/review2"
+            }
+          },
+          "zoomed": true,
+          "focused": 62,
+          "root_pane": 62
+        },
+        {
+          "custom_name": "gh dash",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 18
+              },
+              "second": {
+                "Pane": 71
+              }
+            }
+          },
+          "panes": {
+            "71": {
+              "cwd": "/Users/stephencouturier/Projects/review"
+            },
+            "18": {
+              "cwd": "/Users/stephencouturier/Projects/review"
+            }
+          },
+          "zoomed": true,
+          "focused": 71,
+          "root_pane": 18
+        }
+      ],
+      "active_tab": 2
+    },
+    {
+      "id": "wC",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/rules-engine",
+      "public_pane_numbers": {
+        "67": 1,
+        "86": 3
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 67
+              },
+              "second": {
+                "Pane": 86
+              }
+            }
+          },
+          "panes": {
+            "67": {
+              "cwd": "/Users/stephencouturier/Projects/rules-engine"
+            },
+            "86": {
+              "cwd": "/Users/stephencouturier/Projects/rules-engine"
+            }
+          },
+          "zoomed": true,
+          "focused": 67,
+          "root_pane": 67
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w9",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/nit",
+      "public_pane_numbers": {
+        "24": 3,
+        "21": 1
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 21
+              },
+              "second": {
+                "Pane": 24
+              }
+            }
+          },
+          "panes": {
+            "24": {
+              "cwd": "/Users/stephencouturier/nit"
+            },
+            "21": {
+              "cwd": "/Users/stephencouturier/nit"
+            }
+          },
+          "zoomed": false,
+          "focused": 24,
+          "root_pane": 21
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wA",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/Meeteor",
+      "public_pane_numbers": {
+        "23": 3
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 23
+          },
+          "panes": {
+            "23": {
+              "cwd": "/Users/stephencouturier/Projects/Meeteor"
+            }
+          },
+          "zoomed": false,
+          "focused": 23,
+          "root_pane": 23
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wB",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/surefin",
+      "public_pane_numbers": {
+        "34": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 34
+          },
+          "panes": {
+            "34": {
+              "cwd": "/Users/stephencouturier/Projects/surefin"
+            }
+          },
+          "zoomed": false,
+          "focused": 34,
+          "root_pane": 34
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wD",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/porch-v2",
+      "public_pane_numbers": {
+        "83": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 83
+          },
+          "panes": {
+            "83": {
+              "cwd": "/Users/stephencouturier/Projects/porch-v2"
+            }
+          },
+          "zoomed": false,
+          "focused": 83,
+          "root_pane": 83
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wE",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/dotfiles",
+      "public_pane_numbers": {
+        "97": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 97
+          },
+          "panes": {
+            "97": {
+              "cwd": "/Users/stephencouturier/dotfiles"
+            }
+          },
+          "zoomed": false,
+          "focused": 97,
+          "root_pane": 97
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wF",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1-BLD-9687",
+      "public_pane_numbers": {
+        "108": 1,
+        "115": 3,
+        "114": 2
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 108
+              },
+              "second": {
+                "Split": {
+                  "direction": "Horizontal",
+                  "ratio": 0.5,
+                  "first": {
+                    "Pane": 114
+                  },
+                  "second": {
+                    "Pane": 115
+                  }
+                }
+              }
+            }
+          },
+          "panes": {
+            "115": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9687"
+            },
+            "114": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9687"
+            },
+            "108": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9687"
+            }
+          },
+          "zoomed": false,
+          "focused": 114,
+          "root_pane": 108
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wG",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1-BLD-9691",
+      "public_pane_numbers": {
+        "112": 2,
+        "111": 1
+      },
+      "next_public_pane_number": 3,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 111
+              },
+              "second": {
+                "Pane": 112
+              }
+            }
+          },
+          "panes": {
+            "111": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9691"
+            },
+            "112": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9691"
+            }
+          },
+          "zoomed": false,
+          "focused": 112,
+          "root_pane": 111
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wH",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1-BLD-9699",
+      "public_pane_numbers": {
+        "113": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 113
+          },
+          "panes": {
+            "113": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9699"
+            }
+          },
+          "zoomed": false,
+          "focused": 113,
+          "root_pane": 113
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wJ",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1-BLD-9751",
+      "public_pane_numbers": {
+        "116": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 116
+          },
+          "panes": {
+            "116": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9751"
+            }
+          },
+          "zoomed": false,
+          "focused": 116,
+          "root_pane": 116
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wK",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects",
+      "public_pane_numbers": {
+        "117": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 117
+          },
+          "panes": {
+            "117": {
+              "cwd": "/Users/stephencouturier/Projects"
+            }
+          },
+          "zoomed": false,
+          "focused": 117,
+          "root_pane": 117
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 14,
+  "selected": 14,
+  "sidebar_width": null,
+  "sidebar_section_split": null,
+  "collapsed_space_keys": []
+}

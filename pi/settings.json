@@ -10,10 +10,15 @@
   "warnings": {
     "anthropicExtraUsage": false
   },
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.5.2",
   "packages": [
     "npm:@ifi/oh-pi-themes",
-    "git:github.com/StephenCouturier/llm-review@v0.2.0"
+    "../../Projects/risk-management/nit",
+    "../../nit",
+    "npm:pi-subagents"
   ],
-  "tuiMode": "fullscreen"
+  "tuiMode": "fullscreen",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.88.0"
+  }
 }

@@ -1,7 +1,7 @@
 ---
 description: Reviews architecture, performance, scalability, and identifies future risks
 mode: subagent
-model: anthropic/claude-opus-
+model: anthropic/claude-fable-5-1
 temperature: 0.1
 tools:
   write: false

@@ -1,0 +1,21 @@
+2026-10-12T13:13:24.764059Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=60699
+2026-10-12T13:13:24.764105Z  INFO herdr::client: connecting to server path=/Users/stephencouturier/.config/herdr/herdr-client.sock
+2026-10-12T13:13:24.896874Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.3
+2026-10-12T13:16:08.676973Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=66671
+2026-10-12T13:16:08.677027Z  INFO herdr::client: connecting to server path=/Users/stephencouturier/.config/herdr/herdr-client.sock
+2026-10-12T13:16:08.928893Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.3
+2026-10-12T13:16:10.515073Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=60699
+2026-10-12T13:16:21.431307Z  INFO herdr::client: client terminal unavailable; detaching err=Inappropriate ioctl for device (os error 25)
+2026-10-12T13:16:21.431836Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=66671
+2026-10-12T13:16:28.410675Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=67173
+2026-10-12T13:16:28.410709Z  INFO herdr::client: connecting to server path=/Users/stephencouturier/.config/herdr/herdr-client.sock
+2026-10-12T13:16:28.477246Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.3
+2026-10-21T21:35:15.237540Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=67173
+2026-10-21T21:37:28.617138Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=838
+2026-10-21T21:37:28.617734Z  INFO herdr::client: connecting to server path=/Users/stephencouturier/.config/herdr/herdr-client.sock
+2026-10-21T21:37:28.669420Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.3
+2026-11-17T04:36:40.239590Z  WARN herdr::client: failed to present retained pane surface patch error=Input/output error (os error 5)
+2026-11-17T04:36:40.240534Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=838
+2026-11-17T04:36:40.787008Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=38263
+2026-11-17T04:36:40.787039Z  INFO herdr::client: connecting to server path=/Users/stephencouturier/.config/herdr/herdr-client.sock
+2026-11-17T04:36:40.793106Z  INFO herdr::client::handshake: endpoint handshake succeeded generation=1 server_version=0.9.3

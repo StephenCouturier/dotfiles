@@ -1,0 +1,570 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "w7",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/risk-management",
+      "worktree_space": {
+        "key": "/Users/stephencouturier/Projects/risk-management/.git",
+        "label": "risk-management",
+        "repo_root": "/Users/stephencouturier/Projects/risk-management",
+        "checkout_path": "/Users/stephencouturier/Projects/risk-management",
+        "is_linked_worktree": false
+      },
+      "public_pane_numbers": {
+        "8": 13,
+        "107": 74,
+        "100": 67,
+        "106": 73,
+        "103": 70,
+        "5": 3,
+        "10": 15,
+        "53": 36,
+        "124": 79,
+        "11": 17
+      },
+      "next_public_pane_number": 81,
+      "public_tab_numbers": [
+        10,
+        8,
+        3,
+        5,
+        6,
+        7
+      ],
+      "next_public_tab_number": 11,
+      "tabs": [
+        {
+          "custom_name": "Editor",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.43506494,
+              "first": {
+                "Pane": 100
+              },
+              "second": {
+                "Pane": 124
+              }
+            }
+          },
+          "panes": {
+            "124": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            },
+            "100": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": true,
+          "focused": 124,
+          "root_pane": 100
+        },
+        {
+          "custom_name": "processes",
+          "layout": {
+            "Pane": 11
+          },
+          "panes": {
+            "11": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 11,
+          "root_pane": 11
+        },
+        {
+          "custom_name": "DB",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 5
+              },
+              "second": {
+                "Split": {
+                  "direction": "Vertical",
+                  "ratio": 0.5,
+                  "first": {
+                    "Pane": 106
+                  },
+                  "second": {
+                    "Pane": 107
+                  }
+                }
+              }
+            }
+          },
+          "panes": {
+            "5": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            },
+            "107": {
+              "cwd": "/Users/stephencouturier/Scripts"
+            },
+            "106": {
+              "cwd": "/Users/stephencouturier/Scripts"
+            }
+          },
+          "zoomed": false,
+          "focused": 5,
+          "root_pane": 5
+        },
+        {
+          "custom_name": "Scrap",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 53
+              },
+              "second": {
+                "Pane": 103
+              }
+            }
+          },
+          "panes": {
+            "103": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            },
+            "53": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 53,
+          "root_pane": 53
+        },
+        {
+          "custom_name": "Editor 2",
+          "layout": {
+            "Pane": 8
+          },
+          "panes": {
+            "8": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 8,
+          "root_pane": 8
+        },
+        {
+          "custom_name": "DB 2",
+          "layout": {
+            "Pane": 10
+          },
+          "panes": {
+            "10": {
+              "cwd": "/Users/stephencouturier/Projects/risk-management"
+            }
+          },
+          "zoomed": false,
+          "focused": 10,
+          "root_pane": 10
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w4",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1",
+      "public_pane_numbers": {
+        "109": 7
+      },
+      "next_public_pane_number": 8,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 109
+          },
+          "panes": {
+            "109": {
+              "cwd": "/Users/stephencouturier/Projects/wk1"
+            }
+          },
+          "zoomed": false,
+          "focused": 109,
+          "root_pane": 109
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w5",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk2",
+      "public_pane_numbers": {
+        "126": 12,
+        "131": 13,
+        "91": 11
+      },
+      "next_public_pane_number": 14,
+      "public_tab_numbers": [
+        2,
+        3
+      ],
+      "next_public_tab_number": 4,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 91
+              },
+              "second": {
+                "Pane": 131
+              }
+            }
+          },
+          "panes": {
+            "91": {
+              "cwd": "/Users/stephencouturier/Projects/wk2"
+            },
+            "131": {
+              "cwd": "/Users/stephencouturier/Projects/wk2"
+            }
+          },
+          "zoomed": false,
+          "focused": 131,
+          "root_pane": 91
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 126
+          },
+          "panes": {
+            "126": {
+              "cwd": "/Users/stephencouturier/Projects/wk2"
+            }
+          },
+          "zoomed": false,
+          "focused": 126,
+          "root_pane": 126
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "w2",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/review",
+      "public_pane_numbers": {
+        "63": 6,
+        "18": 4,
+        "16": 1,
+        "71": 8,
+        "62": 5
+      },
+      "next_public_pane_number": 9,
+      "public_tab_numbers": [
+        1,
+        3,
+        4
+      ],
+      "next_public_tab_number": 5,
+      "tabs": [
+        {
+          "custom_name": "review 1",
+          "layout": {
+            "Pane": 16
+          },
+          "panes": {
+            "16": {
+              "cwd": "/Users/stephencouturier/Projects/review"
+            }
+          },
+          "zoomed": false,
+          "focused": 16,
+          "root_pane": 16
+        },
+        {
+          "custom_name": "review 2",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 62
+              },
+              "second": {
+                "Pane": 63
+              }
+            }
+          },
+          "panes": {
+            "62": {
+              "cwd": "/Users/stephencouturier/Projects/review2"
+            },
+            "63": {
+              "cwd": "/Users/stephencouturier/Projects/review2"
+            }
+          },
+          "zoomed": true,
+          "focused": 62,
+          "root_pane": 62
+        },
+        {
+          "custom_name": "gh dash",
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 18
+              },
+              "second": {
+                "Pane": 71
+              }
+            }
+          },
+          "panes": {
+            "71": {
+              "cwd": "/Users/stephencouturier/Projects/review"
+            },
+            "18": {
+              "cwd": "/Users/stephencouturier/Projects/review"
+            }
+          },
+          "zoomed": true,
+          "focused": 71,
+          "root_pane": 18
+        }
+      ],
+      "active_tab": 2
+    },
+    {
+      "id": "wC",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/rules-engine",
+      "public_pane_numbers": {
+        "67": 1,
+        "86": 3
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 67
+              },
+              "second": {
+                "Pane": 86
+              }
+            }
+          },
+          "panes": {
+            "86": {
+              "cwd": "/Users/stephencouturier/Projects/rules-engine"
+            },
+            "67": {
+              "cwd": "/Users/stephencouturier/Projects/rules-engine"
+            }
+          },
+          "zoomed": true,
+          "focused": 67,
+          "root_pane": 67
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wP",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1",
+      "public_pane_numbers": {
+        "127": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 127
+          },
+          "panes": {
+            "127": {
+              "cwd": "/Users/stephencouturier/Projects/wk1"
+            }
+          },
+          "zoomed": false,
+          "focused": 127,
+          "root_pane": 127
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wQ",
+      "custom_name": "BLD-9698",
+      "identity_cwd": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9698",
+      "worktree_space": {
+        "key": "/Users/stephencouturier/Projects/risk-management/.git",
+        "label": "risk-management",
+        "repo_root": "/Users/stephencouturier/Projects/risk-management",
+        "checkout_path": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9698",
+        "is_linked_worktree": true
+      },
+      "public_pane_numbers": {
+        "128": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 128
+          },
+          "panes": {
+            "128": {
+              "cwd": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9698"
+            }
+          },
+          "zoomed": false,
+          "focused": 128,
+          "root_pane": 128
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wR",
+      "custom_name": "BLD-9684",
+      "identity_cwd": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9684",
+      "worktree_space": {
+        "key": "/Users/stephencouturier/Projects/risk-management/.git",
+        "label": "risk-management",
+        "repo_root": "/Users/stephencouturier/Projects/risk-management",
+        "checkout_path": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9684",
+        "is_linked_worktree": true
+      },
+      "public_pane_numbers": {
+        "129": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 129
+          },
+          "panes": {
+            "129": {
+              "cwd": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9684"
+            }
+          },
+          "zoomed": false,
+          "focused": 129,
+          "root_pane": 129
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wS",
+      "custom_name": "BLD-9696",
+      "identity_cwd": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9696",
+      "worktree_space": {
+        "key": "/Users/stephencouturier/Projects/risk-management/.git",
+        "label": "risk-management",
+        "repo_root": "/Users/stephencouturier/Projects/risk-management",
+        "checkout_path": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9696",
+        "is_linked_worktree": true
+      },
+      "public_pane_numbers": {
+        "130": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 130
+          },
+          "panes": {
+            "130": {
+              "cwd": "/Users/stephencouturier/.pi/agent/worktrees/risk-management-bug-spray/BLD-9696"
+            }
+          },
+          "zoomed": false,
+          "focused": 130,
+          "root_pane": 130
+        }
+      ],
+      "active_tab": 0
+    },
+    {
+      "id": "wT",
+      "custom_name": null,
+      "identity_cwd": "/Users/stephencouturier/Projects/wk1-BLD-9699",
+      "public_pane_numbers": {
+        "132": 1
+      },
+      "next_public_pane_number": 2,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 2,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 132
+          },
+          "panes": {
+            "132": {
+              "cwd": "/Users/stephencouturier/Projects/wk1-BLD-9699"
+            }
+          },
+          "zoomed": false,
+          "focused": 132,
+          "root_pane": 132
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 9,
+  "selected": 9,
+  "sidebar_width": null,
+  "sidebar_section_split": null,
+  "collapsed_space_keys": []
+}
